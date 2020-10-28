@@ -20,23 +20,10 @@
     <li><a href="<%=request.getContextPath()%>/fantastisk">fantastisk</a></li>
     <li><a href="<%=request.getContextPath()%>/test11">klikke her!</a></li>
 
-    <form action="/RoProject/parameter" method="GET">
-
-      <p>
-        År <input type="number" name="år">
-      </p>
-      <p>
-        Uke <input type="number" name="uke">
-      </p>
-      <p>
-        Roklasse <input type="text" name="klasse">
-      </p>
-      <p>
-        <input type="submit" value="send">
-      </p>
-
-
-    </form>
+    <li><a href="<%=request.getContextPath()%>/hentEn">Utøver</a></li>
+    <li><a href="trenerpage.jsp">Trener</a></li>
+    <li><a href="roforbundpage.jsp">Roforbund</a></li>
+    <li><a href="KnutForside.jsp">Demo_nettside</a></li>
 
 
 

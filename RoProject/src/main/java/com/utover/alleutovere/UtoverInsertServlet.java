@@ -21,14 +21,6 @@ public class UtoverInsertServlet extends HttpServlet {
         alleutovere = new alleUtovere();
     }
 
-    public Connection createConnection(){
-        try {
-            this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Roprosjekt?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "adminroot");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return this.connection;
-    }
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

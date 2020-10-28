@@ -1,4 +1,4 @@
-package com;
+package com.utover.alleutovere;
 
 import com.utover.alleutovere.alleUtovere;
 import com.utover.alleutovere.Utover;
@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "v2utoverServlet", urlPatterns = {"/v2utoverServlet", "/alleutovere", "/test11" })
+@WebServlet(name = "v2utoverServlet", urlPatterns = {"/v2utoverServlet", "/alleutovere", "/hentEn" })
 public class v2utoverServlet extends HttpServlet {
     private alleUtovere alleutovere;
 
@@ -36,8 +36,8 @@ public class v2utoverServlet extends HttpServlet {
                 case "/alleutovere":
                     Listalleutovere(request, response);
                     break;
-                case "/test11":
-                    tests(request, response);
+                case "/hentEn":
+                    hentEn(request, response);
             }
         } catch (SQLException e) {
             throw new ServletException();
@@ -49,14 +49,36 @@ public class v2utoverServlet extends HttpServlet {
         private void Listalleutovere(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
             List<Utover> listUtover = alleutovere.listOppAlleUtovere();
             request.setAttribute("listUtovere", listUtover);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("MineUtovereTrener.jsp");
             dispatcher.forward(request, response);
 
     }
 
-    public void tests(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        PrintWriter out = response.getWriter();
-        out.println("Switch case fungerer:)");
+
+    public void hentEn(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int utøverID = 71;
+
+        Utover utv = new Utover(utøverID);
+        utv = alleutovere.hentEn(utv);
+
+
+        int UtøverID = utv.getuID();
+        String Kjonn = utv.getKjonnID();
+        String Roklubb = utv.getKlubbID();
+        String Roklasse = utv.getKlasseID();
+        String Fornavn = utv.getFornavn();
+        String Etternavn = utv.getEtternavn();
+        int Fodt = utv.getFodt();
+
+
+        request.setAttribute("utoverid", UtøverID);
+        request.setAttribute("kjonn", Kjonn);
+        request.setAttribute("roklubb", Roklubb);
+        request.setAttribute("roklasse", Roklasse);
+        request.setAttribute("fornavn", Fornavn);
+        request.setAttribute("etternavn", Etternavn);
+        request.setAttribute("fodt", Fodt);
+        request.getRequestDispatcher("utoverpage.jsp").forward(request, response);
     }
 
 }

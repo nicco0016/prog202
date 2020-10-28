@@ -43,14 +43,13 @@
         <thead>
         <tr>
 
-
+            <th>score</th>
             <th>UtoverID</th>
             <th>fornavn</th>
             <th>etternavn</th>
             <th>år</th>
             <th>uke</th>
             <th>klasseID</th>
-            <th>score</th>
             <th>watt_60</th>
             <th>bevegelighet</th>
             <th>watt_5000_m</th>
@@ -70,14 +69,13 @@
 
             <tr>
 
-
+                <td>${testresultat.score}</td>
                 <td>${testresultat.uID}</td>
                 <td>${testresultat.fornavn}</td>
                 <td>${testresultat.etternavn}</td>
                 <td>${testresultat.år}</td>
                 <td>${testresultat.uke}</td>
                 <td>${testresultat.klasseID}</td>
-                <td>${testresultat.score}</td>
                 <td>${testresultat.watt_60}</td>
                 <td>${testresultat.bevegelighet}</td>
                 <td>${testresultat.watt_5000_m}</td>
@@ -109,7 +107,7 @@
 </div>
 
 <footer id="main-footer">
-    <p>Copuritgh my website. Ingen kødder!</p>
+    <p>Copuritgh my website. </p>
 </footer>
 </body>
 </html>
