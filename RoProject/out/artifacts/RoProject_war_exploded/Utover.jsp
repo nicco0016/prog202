@@ -71,7 +71,7 @@
 </div>
 
 <footer id="main-footer">
-    <p>Copuritgh my website. Ingen kødder!</p>
+    <p>Copuritgh my website. </p>
 </footer>
 </body>
 </html>

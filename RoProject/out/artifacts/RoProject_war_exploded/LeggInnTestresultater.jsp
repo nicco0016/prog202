@@ -29,12 +29,12 @@
 
 <section id="showcase">
 
-    <form action="/RoProject/LeggTil" method="POST">
+    <form action="LeggTilTestresultat" method="POST">
         <p>
             UtøverID <input type="number" name="uID" required />
         </p>
         <p>
-            År <input type="number" name="år" required />
+            År <input type="number" name="ar">
         </p>
         <p>
             Uke<input type="number" name="uke" required />
@@ -46,19 +46,19 @@
             Watt_60 <input type="number" name="watt_60" required />
         </p>
         <p>
-            Bevegelighet <input type="text" name="etternavn" required />
+            Bevegelighet <input type="text" name="Bevegelighet" required />
         </p>
         <p>
             watt_5000_m <input type="number" name="watt_5000_m" required />
         </p>
         <p>
-            tid_5000_m <input type="number" name="tid_5000_m" required />
+            tid_5000_m <input type="text" name="tid_5000_m" required />
         </p>
         <p>
             watt_2000_m <input type="number" name="watt_2000_m" required />
         </p>
         <p>
-            tid_2000_m <input type="number" name="tid_2000_m" required />
+            tid_2000_m <input type="text" name="tid_2000_m" required />
         </p>
         <p>
             prosent_ligg_ro <input type="number" name="prosent_ligg_ro" required />
@@ -67,10 +67,10 @@
             kilo_ligg_ro <input type="number" name="kilo_ligg_ro" required />
         </p>
         <p>
-            prosent_knebøy <input type="number" name="prosent_knebøy" required />
+            prosent_knebøy <input type="number" name="prosent_kneboy" required />
         </p>
         <p>
-            kilo_knebøy <input type="number" name="kilo_knebøy" required />
+            kilo_knebøy <input type="number" name="kilo_kneboy" required />
         </p>
         <p>
             Cm_Sargeant <input type="number" name="Cm_Sargeant" required />
@@ -79,13 +79,13 @@
             sek_3000_m <input type="number" name="sek_3000_m" required />
         </p>
         <p>
-            min_3000_m <input type="number" name="min_3000_m" required />
+            min_3000_m <input type="text" name="min_3000_m" required />
         </p>
         <p>
             antall_Kr_hev <input type="number" name="antall_Kr_hev" required />
         </p>
         <p>
-            _3000_løp <input type="number" name="_3000_løp" required />
+            _3000_løp <input type="text" name="_3000_lop" required />
         </p>
         <p>
             score <input type="number" name="score" required />

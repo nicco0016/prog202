@@ -55,6 +55,10 @@ public class testresultat {
         this.klasseID = klasseID;
     }
 
+    public testresultat(String klasseID) {
+        this.klasseID = klasseID;
+    }
+
     public testresultat(int uID, int år, int uke, String klasseID, float watt_60, int bevegelighet, float watt_5000_m, String tid_5000_m, float watt_2000_m, String tid_2000_m, float prosent_ligg_ro, float kilo_ligg_ro, float prosent_knebøy, float kilo_knebøy, float cm_Sargeant, float sek_3000_m, String min_3000_m, int antall_Kr_hev, String _3000_løp, float score) {
         this.uID = uID;
         this.år = år;
@@ -76,6 +80,22 @@ public class testresultat {
         this.antall_Kr_hev = antall_Kr_hev;
         this._3000_løp = _3000_løp;
         this.score = score;
+    }
+
+    public testresultat(int år, int uke, String klasseID, float watt_60, int bevegelighet, float watt_5000_m, String tid_5000_m, float watt_2000_m, String tid_2000_m, float prosent_ligg_ro, float kilo_ligg_ro, float score) {
+        this.år = år;
+        this.uke = uke;
+        this.klasseID = klasseID;
+        this.watt_60 = watt_60;
+        this.bevegelighet = bevegelighet;
+        this.watt_5000_m = watt_5000_m;
+        this.tid_5000_m = tid_5000_m;
+        this.watt_2000_m = watt_2000_m;
+        this.tid_2000_m = tid_2000_m;
+        this.prosent_ligg_ro = prosent_ligg_ro;
+        this.kilo_ligg_ro = kilo_ligg_ro;
+        this.score = score;
+
     }
 
     public int getuID() {

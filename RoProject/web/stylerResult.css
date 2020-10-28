@@ -44,7 +44,7 @@ body{
 
 #showcase{
     margin-top: 1px;
-    border: 5px solid red;
+    border: 5px solid blue;
     height: auto;
     margin-bottom: 30px;
     text-align: center;
@@ -61,11 +61,13 @@ body{
 table, th, td{
     border: 1px solid black;
     border-collapse: collapse;
+    text-align: center;
 }
 th, td{
     padding: 5px;
     text-align: center;
 }
+
 
 
 #main{

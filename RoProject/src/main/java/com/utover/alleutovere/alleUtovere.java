@@ -15,7 +15,7 @@ public class alleUtovere {
             "join klubb klubb\n" +
             "\ton utover.klubbID = klubb.klubbID\n" +
             "join roKlasse roKlasse\n" +
-            "\ton utover.klasseID = roKlasse.klasseID order by uID";
+            "\ton utover.klasseID = roKlasse.klasseID where klubb.klubbID = 17 order by uID ";
 
     private String QUERY2 = "insert into utover values (?,?,?,?,?,?,?)";
 
