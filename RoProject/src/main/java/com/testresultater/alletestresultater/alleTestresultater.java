@@ -290,6 +290,39 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
        return testresultater;
     }
 
+    public void insertTestresultat_ofc(testresultat testresparam)  {
+        try {
+            //String query = "insert into testresultater_mid values(?)";
+            String query = "insert into testresultater(select * from testresultater_mid where uID = ?)";
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, testresparam.getuID());
+            statement.execute();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            destroy();
+        }
+    }
+
+    public void deleteTestresultat_mid(testresultat testresparam)  {
+        try {
+            //String query = "insert into testresultater_mid values(?)";
+            String query = "delete from testresultater_mid where uID = ?";
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, testresparam.getuID());
+            statement.execute();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            destroy();
+        }
+    }
+
+
 
 
 

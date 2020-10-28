@@ -59,7 +59,7 @@
             <th>tid_2000_m</th>
             <th>antall_Kr_hev</th>
             <th>Cm_Sargeant</th>
-
+            <th>Handling</th>
 
         </tr>
         </thead>
@@ -86,7 +86,7 @@
                 <td>${testresultat.tid_2000_m}</td>
                 <td>${testresultat.antall_Kr_hev}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-
+                <td><a href="<%=request.getContextPath()%>/godkjent?id=<c:out value ='${testresultat.uID}'/>">Godkjent</a></td>
 
 
 

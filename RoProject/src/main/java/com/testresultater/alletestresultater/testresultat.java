@@ -59,6 +59,10 @@ public class testresultat {
         this.klasseID = klasseID;
     }
 
+    public testresultat(int uID) {
+        this.uID = uID;
+    }
+
     public testresultat(int uID, int år, int uke, String klasseID, float watt_60, int bevegelighet, float watt_5000_m, String tid_5000_m, float watt_2000_m, String tid_2000_m, float prosent_ligg_ro, float kilo_ligg_ro, float prosent_knebøy, float kilo_knebøy, float cm_Sargeant, float sek_3000_m, String min_3000_m, int antall_Kr_hev, String _3000_løp, float score) {
         this.uID = uID;
         this.år = år;

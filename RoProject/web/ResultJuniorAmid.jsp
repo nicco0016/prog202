@@ -59,6 +59,7 @@
             <th>prosent_ligg_ro</th>
             <th>kilo_ligg_ro</th>
             <th>Cm_Sargeant</th>
+            <th>Handling</th>
 
         </tr>
         </thead>
@@ -85,7 +86,7 @@
                 <td>${testresultat.prosent_ligg_ro}</td>
                 <td>${testresultat.kilo_ligg_ro}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-
+                <td><a href="<%=request.getContextPath()%>/godkjent?id=<c:out value ='${testresultat.uID}'/>">Godkjent</a></td>
 
             </tr>
 
