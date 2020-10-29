@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "TestresultatInsertOFCServlet", urlPatterns = {"/godkjent"})
+@WebServlet(name = "TestresultatInsertOFCServlet", urlPatterns = {"/godkjent", "/ikkegodkjent"})
 public class TestresultatInsertOFCServlet extends HttpServlet {
 
 
@@ -28,6 +28,9 @@ public class TestresultatInsertOFCServlet extends HttpServlet {
             case "/godkjent":
                 godkjenn(request, response);
                 break;
+            case "/ikkegodkjent":
+                avsla(request, response);
+                break;
         }
     }
 
@@ -39,6 +42,15 @@ public class TestresultatInsertOFCServlet extends HttpServlet {
         testresultat testresdelete = new testresultat(utoverID);
         alletestresultater.deleteTestresultat_mid(testresdelete);
 
+    }
+
+    public void avsla(HttpServletRequest request, HttpServletResponse response){
+        alleTestresultater alletestresultater = new alleTestresultater();
+        int utoverID = Integer.parseInt(request.getParameter("id"));
+        testresultat testresinsert = new testresultat(utoverID);
+        alletestresultater.insertTestresultat_avsla(testresinsert);
+        testresultat testresdelete = new testresultat(utoverID);
+        alletestresultater.deleteTestresultat_mid(testresdelete);
     }
 }
 

@@ -91,6 +91,7 @@
                 <td>${testresultat.prosent_knebøy}</td>
                 <td>${testresultat.kilo_knebøy}</td>
                 <td><a href="<%=request.getContextPath()%>/godkjent?id=<c:out value ='${testresultat.uID}'/>">Godkjent</a></td>
+                <td><a href="<%=request.getContextPath()%>/ikkegodkjent?id=<c:out value ='${testresultat.uID}'/>">Avlså</a></td>
 
 
 

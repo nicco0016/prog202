@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 28/10/2020
-  Time: 14:59
+  Date: 29/10/2020
+  Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -90,8 +90,8 @@
                 <td>${testresultat.kilo_ligg_ro}</td>
                 <td>${testresultat.prosent_knebøy}</td>
                 <td>${testresultat.kilo_knebøy}</td>
-                <td><a href="<%=request.getContextPath()%>/godkjent?id=<c:out value ='${testresultat.uID}'/>">Godkjent</a></td>
-                <td><a href="<%=request.getContextPath()%>/ikkegodkjent?id=<c:out value ='${testresultat.uID}'/>">Avlså</a></td>
+                <td><a href="<%=request.getContextPath()%>/endre?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
+
 
 
 
