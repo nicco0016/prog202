@@ -1,6 +1,9 @@
 package com.testresultater.alletestresultater;
 
 
+import com.testresultater.alletestresultater.objekter.Testresultati;
+import com.testresultater.alletestresultater.objekter.testresultat;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,8 @@
 package com.utover.alleutovere;
 
+import com.utover.alleutovere.objekter.Utover;
+import com.utover.alleutovere.objekter.utoveri;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
