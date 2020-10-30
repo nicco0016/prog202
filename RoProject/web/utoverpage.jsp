@@ -21,7 +21,8 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="<%=request.getContextPath()%>/testresultater">Mine testresultater</a></li>
+
+            <td><a href="<%=request.getContextPath()%>/testresultater?id=${utoverid}">Mine testresultater</a></td>
             <li><a href="LeggInnTestresultater.jsp">Min klubb</a></li>
             <li><a href="Utover.jsp">Utøvere</a></li>
         </ul>

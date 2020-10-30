@@ -19,9 +19,13 @@ public class Utover {
         this.fodt = fodt;
     }
 
+
+
     public Utover(int uID) {
         this.uID = uID;
     }
+
+
 
     public int getuID() {
         return uID;

@@ -6,6 +6,7 @@ import com.utover.alleutovere.objekter.Utover;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,17 +16,22 @@ import java.util.List;
 
 @WebServlet(name = "v2utoverServlet", urlPatterns = {"/v2utoverServlet", "/alleutovere", "/hentEn" })
 public class v2utoverServlet extends HttpServlet {
-    private alleUtovere alleutovere;
+      private int Uid;
 
-    public void init(){
-        alleutovere = new alleUtovere();
-    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        int uid = 0;
+        Cookie cookies[] = request.getCookies();
+        for (Cookie c : cookies){
+            if (c.getName().equals("UID"))
+                uid = Integer.parseInt(c.getValue());
+                Uid = uid;
+        }
 
 
         String action = request.getServletPath();
@@ -46,6 +52,7 @@ public class v2utoverServlet extends HttpServlet {
 
 
         private void Listalleutovere(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+            alleUtovere alleutovere = new alleUtovere();
             List<Utover> listUtover = alleutovere.listOppAlleUtovere();
             request.setAttribute("listUtovere", listUtover);
             RequestDispatcher dispatcher = request.getRequestDispatcher("MineUtovereTrener.jsp");
@@ -55,8 +62,9 @@ public class v2utoverServlet extends HttpServlet {
 
 
     public void hentEn(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int utøverID = 71;
+        int utøverID = Uid;
 
+        alleUtovere alleutovere = new alleUtovere();
         Utover utv = new Utover(utøverID);
         utv = alleutovere.hentEn(utv);
 

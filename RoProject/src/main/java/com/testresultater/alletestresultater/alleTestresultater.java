@@ -3,6 +3,7 @@ package com.testresultater.alletestresultater;
 
 import com.testresultater.alletestresultater.objekter.Testresultati;
 import com.testresultater.alletestresultater.objekter.testresultat;
+import com.utover.alleutovere.objekter.Utover;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -243,7 +244,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
         return testresultater;
     }
 
-    public List<testresultat> listOppEnUtover(){
+    public List<testresultat> listOppEnUtover(testresultat param){
         List<testresultat> testresultater = new ArrayList<>();
        try {
            String query = "SELECT \n" +
@@ -267,9 +268,10 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
                    "    \n" +
                    "join roKlasse r\n" +
                    "\ton t.klasseID = r.klasseID\n" +
-                   "where t.uID = 71;";
+                   "where t.uID = ? ";
            Connection connection = createConnection();
            PreparedStatement preparedStatement = connection.prepareStatement(query);
+           preparedStatement.setInt(1, param.getuID());
            ResultSet rs = preparedStatement.executeQuery();
 
            while (rs.next()){
