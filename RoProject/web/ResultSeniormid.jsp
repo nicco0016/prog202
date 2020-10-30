@@ -61,7 +61,7 @@
             <th>kilo_ligg_ro</th>
             <th>prosent_knebøy</th>
             <th>kilo_knebøy</th>
-
+            <th>Handling</th>
 
         </tr>
         </thead>
@@ -90,7 +90,8 @@
                 <td>${testresultat.kilo_ligg_ro}</td>
                 <td>${testresultat.prosent_knebøy}</td>
                 <td>${testresultat.kilo_knebøy}</td>
-
+                <td><a href="<%=request.getContextPath()%>/godkjent?id=<c:out value ='${testresultat.uID}'/>">Godkjent</a></td>
+                <td><a href="<%=request.getContextPath()%>/ikkegodkjent?id=<c:out value ='${testresultat.uID}'/>">Avlså</a></td>
 
 
 

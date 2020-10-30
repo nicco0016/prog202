@@ -23,6 +23,7 @@
         <ul>
             <li><a href="LeggInnTestresultater.jsp">Legg til testresultater</a></li>
             <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>
+            <li><a href="AvslagTestresultater.jsp">Avlag på innrapportering</a></li>
             <li><a href="LeggInnTestResTrenerV2.jsp">Legg til</a></li>
 
         </ul>

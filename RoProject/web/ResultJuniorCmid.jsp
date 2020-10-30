@@ -83,12 +83,8 @@
                 <td>${testresultat._3000_løp}</td>
                 <td>${testresultat.antall_Kr_hev}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-                <td><a href="edit?id=<c:out value='${user.id}' />">Godkjent</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                     <a href="delete?id=<c:out value='${user.id}' />">Ikke Godkjent</a></td>
-
-
-
+                <td><a href="<%=request.getContextPath()%>/godkjent?id=<c:out value ='${testresultat.uID}'/>">Godkjent</a></td>
+                <td><a href="<%=request.getContextPath()%>/ikkegodkjent?id=<c:out value ='${testresultat.uID}'/>">Avlså</a></td>
 
 
 
