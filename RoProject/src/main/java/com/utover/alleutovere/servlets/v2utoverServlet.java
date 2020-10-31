@@ -14,9 +14,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "v2utoverServlet", urlPatterns = {"/v2utoverServlet", "/alleutovere", "/hentEn" })
+@WebServlet(name = "v2utoverServlet", urlPatterns = {"/v2utoverServlet", "/alleutovere", "/hentEn", "/klubbUtovere" })
 public class v2utoverServlet extends HttpServlet {
       private int Uid;
+      private String roklubb;
+
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,8 +33,13 @@ public class v2utoverServlet extends HttpServlet {
             if (c.getName().equals("UID"))
                 uid = Integer.parseInt(c.getValue());
                 Uid = uid;
+
         }
 
+
+
+        String klubb = request.getParameter("roklubb");
+        roklubb = klubb;
 
         String action = request.getServletPath();
 
@@ -43,6 +50,11 @@ public class v2utoverServlet extends HttpServlet {
                     break;
                 case "/hentEn":
                     hentEn(request, response);
+                    break;
+                case "/klubbUtovere":
+                    Listalleutovere(request, response);
+                    break;
+
             }
         } catch (SQLException e) {
             throw new ServletException();
@@ -52,8 +64,10 @@ public class v2utoverServlet extends HttpServlet {
 
 
         private void Listalleutovere(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+
+            Utover utover = new Utover(roklubb);
             alleUtovere alleutovere = new alleUtovere();
-            List<Utover> listUtover = alleutovere.listOppAlleUtovere();
+            List<Utover> listUtover = alleutovere.listOppAlleUtovere(utover);
             request.setAttribute("listUtovere", listUtover);
             RequestDispatcher dispatcher = request.getRequestDispatcher("MineUtovereTrener.jsp");
             dispatcher.forward(request, response);
@@ -87,5 +101,7 @@ public class v2utoverServlet extends HttpServlet {
         request.setAttribute("fodt", Fodt);
         request.getRequestDispatcher("utoverpage.jsp").forward(request, response);
     }
+
+
 
 }

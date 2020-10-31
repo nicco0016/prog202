@@ -25,7 +25,9 @@ public class Utover {
         this.uID = uID;
     }
 
-
+    public Utover(String klubbID) {
+        this.klubbID = klubbID;
+    }
 
     public int getuID() {
         return uID;

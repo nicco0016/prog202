@@ -19,7 +19,15 @@ public class LoggInnServlet extends HttpServlet {
         if(brukernavn.contains("utover")){
             Cookie coockie = new Cookie("UID", passord + "");
             response.addCookie(coockie);
-            response.sendRedirect("hentEn");;
+            response.sendRedirect("hentEn"); //Sender til v2utoverServlet som "hentEn key"
+        }
+        else if(brukernavn.contains("trener")){
+            Cookie cookie = new Cookie("KLUBBID", passord + "");
+            response.addCookie(cookie);
+            response.sendRedirect("hentTrener"); //Sender til TrenerServlet som "hentEn key"
+        }
+        else if(brukernavn.contains("super")){
+            response.sendRedirect("superPage.jsp");
         }
     }
 

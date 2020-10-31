@@ -29,13 +29,9 @@
 </nav>
 
 <section id="showcase">
-    <h2>UtøverID: ${utoverid}</h2>
-    <h2>Fornavn: ${fornavn}</h2>
-    <h2>Etternavn: ${etternavn}</h2>
-    <h2>Kjønn: ${kjonn}</h2>
-    <h2>Roklubb: ${roklubb}</h2>
-    <h2>Roklasse: ${roklasse}</h2>
-    <h2>Årskull: ${fodt}</h2>
+<h2>Hei og velkommen til Norges Roforbundet sin side for SuperBruker</h2>
+    <h2>Her kan du se gjennom testresultater, godkjenne eller avslå</h2>
+
 </section>
 <div class="container">
     <section id="main">

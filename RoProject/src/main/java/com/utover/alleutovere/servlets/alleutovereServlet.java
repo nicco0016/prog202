@@ -29,8 +29,8 @@ public class alleutovereServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<Utover> listUtover = alleutovere.listOppAlleUtovere();
-        request.setAttribute("listUtovere", listUtover);
+        //List<Utover> listUtover = alleutovere.listOppAlleUtovere();
+        //request.setAttribute("listUtovere", listUtover);
         RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
         dispatcher.forward(request, response);
 
