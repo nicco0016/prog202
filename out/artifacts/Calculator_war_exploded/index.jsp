@@ -23,9 +23,7 @@
     <li><a href="<%=request.getContextPath()%>/hentEn">Utøver</a></li>
     <li><a href="trenerpage.jsp">Trener</a></li>
     <li><a href="roforbundpage.jsp">Roforbund</a></li>
-
     <li><a href="KnutForside.jsp">Demo_nettside</a></li>
-    <li><a href="LoggInn.jsp">Demo Logg inn</a></li>
 
 
 
