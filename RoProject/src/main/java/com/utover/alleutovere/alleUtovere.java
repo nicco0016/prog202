@@ -12,13 +12,13 @@ public class alleUtovere {
     //private int UID;
 
     private String QUERY1 = "SELECT utover.uID, kjonn.kjonntype, klubb.klubbNavn, roKlasse.klasseType, utover.fornavn, utover.etternavn, utover.fodt\n" +
-            "from utover utover\n" +
-            "join kjonn kjonn\n" +
-            "\ton utover.kjonnID = kjonn.kjonnID\n" +
-            "join klubb klubb\n" +
-            "\ton utover.klubbID = klubb.klubbID\n" +
-            "join roKlasse roKlasse\n" +
-            "\ton utover.klasseID = roKlasse.klasseID where klubb.klubbID = 17 order by uID ";
+            "            from utover utover\n" +
+            "            join kjonn kjonn\n" +
+            "            on utover.kjonnID = kjonn.kjonnID\n" +
+            "            join klubb klubb\n" +
+            "            on utover.klubbID = klubb.klubbID\n" +
+            "            join roKlasse roKlasse\n" +
+            "            on utover.klasseID = roKlasse.klasseID where klubb.klubbNavn LIKE ? order by uID;";
 
     private String QUERY2 = "insert into utover values (?,?,?,?,?,?,?)";
 
@@ -50,11 +50,12 @@ public class alleUtovere {
     }
 
 
-    public List <Utover> listOppAlleUtovere(){
+    public List <Utover> listOppAlleUtovere(Utover param){
         List<Utover> utovere = new ArrayList<>();
         try {
             Connection connection = createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY1);
+            preparedStatement.setString(1, param.getKlubbID() );
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()){

@@ -34,7 +34,7 @@
 
     <form action="testresmid" method="GET">
 
-        <label for="klasse">Velg roklasse:</label>
+        <label for="klasse">Velg roklasse:</label> <!-- Sender til alleTestresultaterMidServlet -->
         <select id="klasse" name="klasse" required>
             <option value="">Ikke valgt</option>
             <option value="Senior menn">Senior menn</option>

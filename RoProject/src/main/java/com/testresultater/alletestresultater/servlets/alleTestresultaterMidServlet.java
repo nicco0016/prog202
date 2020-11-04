@@ -6,6 +6,7 @@ import com.testresultater.alletestresultater.objekter.testresultat;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,8 +32,7 @@ public class alleTestresultaterMidServlet extends HttpServlet {
 
 
         String klasseid = request.getParameter("klasse");
-
-
+        
         List<testresultat> testresparam = new ArrayList<>();
         testresparam.add(new testresultat(klasseid));
 

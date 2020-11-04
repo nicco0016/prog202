@@ -2,6 +2,7 @@ package com.testresultater.alletestresultater.servlets;
 
 import com.testresultater.alletestresultater.alleTestresultater;
 import com.testresultater.alletestresultater.objekter.testresultat;
+import com.utover.alleutovere.objekter.Utover;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,14 +15,17 @@ import java.util.List;
 
 @WebServlet(name = "UtoverresultatServlet", urlPatterns = {"/testresultater"})
 public class UtoverresultatServlet extends HttpServlet {
-    private alleTestresultater alletestresultater;
+    private int uid;
 
-    public void init(){ alletestresultater = new alleTestresultater();}
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        int utoverID = Integer.parseInt(request.getParameter("id"));
+        uid = utoverID;
 
         String action = request.getServletPath();
         try{
@@ -37,8 +41,9 @@ public class UtoverresultatServlet extends HttpServlet {
     }
 
     public void listOppResultater(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
-        List<testresultat> listtestresultat = alletestresultater.listOppEnUtover();
+        testresultat testres = new testresultat(uid);
+        alleTestresultater alletestresultater = new alleTestresultater();
+        List<testresultat> listtestresultat = alletestresultater.listOppEnUtover(testres);
         request.setAttribute("listtestresultat", listtestresultat);
         RequestDispatcher dispatcher = request.getRequestDispatcher("HentUtTestresultaterUtover.jsp");
         dispatcher.forward(request, response);

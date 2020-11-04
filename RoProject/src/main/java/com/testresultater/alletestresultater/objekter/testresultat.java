@@ -102,6 +102,8 @@ public class testresultat {
 
     }
 
+
+
     public int getuID() {
         return uID;
     }

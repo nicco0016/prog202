@@ -5,6 +5,7 @@ import com.testresultater.alletestresultater.objekter.testresultat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet(name = "TestresultatInsertOFCServlet", urlPatterns = {"/godkjent", "/ikkegodkjent"})
 public class TestresultatInsertOFCServlet extends HttpServlet {
-
+private String klasseID;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -21,6 +22,7 @@ public class TestresultatInsertOFCServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
         String action = request.getServletPath();
 
@@ -34,7 +36,7 @@ public class TestresultatInsertOFCServlet extends HttpServlet {
         }
     }
 
-    public void godkjenn(HttpServletRequest request, HttpServletResponse response){
+    public void godkjenn(HttpServletRequest request, HttpServletResponse response) throws IOException {
         alleTestresultater alletestresultater = new alleTestresultater();
         int utoverID = Integer.parseInt(request.getParameter("id"));
         testresultat testresinsert = new testresultat(utoverID);

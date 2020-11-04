@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Norges Roforbund</title>
-    <link rel="stylesheet" type="text/css" href="stylerResult.css">
+    <link rel="stylesheet" type="text/css" href="HentUtTestresultaterUtover.css">
 </head>
 <body>
 <header id="main-header">
