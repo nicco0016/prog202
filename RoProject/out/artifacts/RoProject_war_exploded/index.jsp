@@ -24,7 +24,8 @@
     <li><a href="trenerpage.jsp">Trener</a></li>
     <li><a href="roforbundpage.jsp">Roforbund</a></li>
     <li><a href="KnutForside.jsp">Demo_nettside</a></li>
-    <li><a href="LoggInn.jsp">Demo Logg inn</a></li>
+    <li><a href="LoggInn2.jsp">Demo Logg inn2</a></li>
+    <li><a href="innrappSkjema.jsp">Demo Logg inn</a></li>
 
 
 

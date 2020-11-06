@@ -32,7 +32,7 @@ public class alleTestresultaterMidServlet extends HttpServlet {
 
 
         String klasseid = request.getParameter("klasse");
-        
+
         List<testresultat> testresparam = new ArrayList<>();
         testresparam.add(new testresultat(klasseid));
 

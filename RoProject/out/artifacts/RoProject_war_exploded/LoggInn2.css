@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(20,72,156,0.26);
+}
+h2 {
+    text-align: center;
+    font-family: Verdana;
+    color: steelblue;
+}
+.formWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    box-sizing: border-box;
+    margin: auto;
+    border-radius: 10px;
+}
+.formWrapper .inputWrapper {
+    position: relative;
+}
+.formWrapper .inputWrapper input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.formWrapper .inputWrapper label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.formWrapper .inputWrapper input:focus ~ label, .formWrapper .inputWrapper input:valid ~ label {
+    top: -18px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 14px;
+}
+button {
+    background-color: steelblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-family: "montserrat";
+    font-size: 18px;
+    border-radius: 22px;
+}
