@@ -21,6 +21,7 @@
 <nav id="navbar">
     <div class="container">
         <ul>
+            <li><a href="innrappSkjema.jsp">Legg til testresultaterV2</a></li>
             <li><a href="LeggInnTestresultater.jsp">Legg til testresultater</a></li>
             <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>
             <li><a href="AvslagTestresultater.jsp">Avlag på innrapportering</a></li>
