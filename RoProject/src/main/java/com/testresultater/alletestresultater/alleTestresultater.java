@@ -91,6 +91,55 @@ public class alleTestresultater {
         }
     }
 
+    public Testresultati getKlasseID (Testresultati param) {
+        Testresultati testres = null;
+        try {
+            String query = "SELECT klasseID FROM Roprosjekt.utover  where uID = ?";
+            Connection connection = createConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, param.getuID());
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()){
+                int klasseID = (rs.getInt("klasseID"));
+                testres = new Testresultati(klasseID);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return testres;
+    }
+
+    public void insertTestresultat_mid_senior(Testresultati param){
+
+        try {
+            String query = "insert into testresultater_mid values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, param.getuID());
+            statement.setInt(2, param.getÅr());
+            statement.setInt(3, param.getUke());
+            statement.setInt(4, param.getKlasseID());
+            statement.setFloat(5, param.getWatt_60());
+            statement.setInt(6, param.getBevegelighet());
+            statement.setFloat(7, param.getWatt_5000_m());
+            statement.setString(8, param.getMin_5000());
+            statement.setString(9, param.getSek_5000());
+            statement.setFloat(10, param.getWatt_2000_m());
+            statement.setString(11, param.getMin_2000());
+            statement.setString(12, param.getSek_2000());
+            statement.setFloat(13, param.getProsent_ligg_ro());
+            statement.setFloat(14, param.getKilo_ligg_ro());
+            statement.setFloat(15, param.getProsent_knebøy());
+            statement.setFloat(16, param.getKilo_knebøy());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public Testresultati  getarukeklasseid (Testresultati param) {
         Testresultati testres = null;
 

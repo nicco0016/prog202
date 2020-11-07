@@ -56,7 +56,9 @@ body{
     font-size: 30px;
     line-height: 1.6em;
     padding-top: 30px;
-    text-align: left;
+    text-align: center;
+
+
 }
 
 table, th, td{

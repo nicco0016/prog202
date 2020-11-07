@@ -8,8 +8,12 @@ public class Testresultati {
         private float watt_60;
         private int bevegelighet;
         private float watt_5000_m;
+        private String min_5000;
+        private String sek_5000;
         private String tid_5000_m;
         private float watt_2000_m;
+        private String min_2000;
+        private String sek_2000;
         private String tid_2000_m;
         private float prosent_ligg_ro;
         private float kilo_ligg_ro;
@@ -65,15 +69,39 @@ public class Testresultati {
         this.score = score;
     }
 
-    public Testresultati( int år, int uke, int klasseID) {
+    public Testresultati(int år, int uke, int uID, int klasseID, float watt_60, int bevegelighet, float watt_5000_m, String min_5000, String sek_5000, float watt_2000_m, String min_2000, String sek_2000, float prosent_ligg_ro, float kilo_ligg_ro, float prosent_knebøy, float kilo_knebøy) {
+        this.år = år;
+        this.uke = uke;
+        this.uID = uID;
+        this.klasseID = klasseID;
+        this.watt_60 = watt_60;
+        this.bevegelighet = bevegelighet;
+        this.watt_5000_m = watt_5000_m;
+        this.min_5000 = min_5000;
+        this.sek_5000 = sek_5000;
+        this.watt_2000_m = watt_2000_m;
+        this.min_2000 = min_2000;
+        this.sek_2000 = sek_2000;
+        this.prosent_ligg_ro = prosent_ligg_ro;
+        this.kilo_ligg_ro = kilo_ligg_ro;
+        this.prosent_knebøy = prosent_knebøy;
+        this.kilo_knebøy = kilo_knebøy;
+    }
+
+
+    public Testresultati(int år, int uke, int klasseID) {
         this.år = år;
         this.uke = uke;
         this.klasseID = klasseID;
     }
 
+
+
     public Testresultati(int uID) {
         this.uID = uID;
     }
+
+
 
     public int getuID() {
         return uID;
@@ -233,6 +261,38 @@ public class Testresultati {
 
     public void setScore(float score) {
         this.score = score;
+    }
+
+    public String getMin_5000() {
+        return min_5000;
+    }
+
+    public void setMin_5000(String min_5000) {
+        this.min_5000 = min_5000;
+    }
+
+    public String getSek_5000() {
+        return sek_5000;
+    }
+
+    public void setSek_5000(String sek_5000) {
+        this.sek_5000 = sek_5000;
+    }
+
+    public String getMin_2000() {
+        return min_2000;
+    }
+
+    public void setMin_2000(String min_2000) {
+        this.min_2000 = min_2000;
+    }
+
+    public String getSek_2000() {
+        return sek_2000;
+    }
+
+    public void setSek_2000(String sek_2000) {
+        this.sek_2000 = sek_2000;
     }
 }
 
