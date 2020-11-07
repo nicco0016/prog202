@@ -32,9 +32,9 @@ public class InsertServlet extends HttpServlet {
         float prosent_knebøy = Float.parseFloat(request.getParameter("Kneboy(%)"));
         float kilo_knebøy = Float.parseFloat(request.getParameter("Kneboy(kg)"));
         alleTestresultater alletestresultater = new alleTestresultater();
-        Testresultati uid = new Testresultati(utoverID);
-        uid = alletestresultater.getKlasseID(uid);
-        int klasseID = uid.getKlasseID();
+        Testresultati param = new Testresultati(utoverID);
+        param = alletestresultater.getKlasseID(param);
+        int klasseID = param.getKlasseID();
         Testresultati nyttTestresultat = new Testresultati(år, uke, utoverID, klasseID, watt_60, bevegelighet, watt_5000_m, min_5000, sek_5000, watt_2000_m, min_2000, sek_2000, prosent_ligg_ro, kilo_ligg_ro, prosent_knebøy, kilo_knebøy);
         alletestresultater.insertTestresultat_mid_senior(nyttTestresultat);
 
