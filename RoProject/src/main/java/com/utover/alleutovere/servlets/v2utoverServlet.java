@@ -55,6 +55,7 @@ public class v2utoverServlet extends HttpServlet {
                     Listalleutovere(request, response);
                     break;
 
+
             }
         } catch (SQLException e) {
             throw new ServletException();
@@ -63,7 +64,8 @@ public class v2utoverServlet extends HttpServlet {
 
 
 
-        private void Listalleutovere(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+
+    private void Listalleutovere(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
 
             Utover utover = new Utover(roklubb);
             alleUtovere alleutovere = new alleUtovere();

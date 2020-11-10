@@ -27,7 +27,7 @@
         <ul>
             <td><a href="<%=request.getContextPath()%>/testresultater?id=${utoverid}">Mine testresultater</a></td> <!--Sender til UtoverresultServlet-->
             <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${roklubb}">Utøvere i ${roklubb} roklubb</a></td> <!-- Sender til v2utoverServlet -->
-            <li><a href="Utover.jsp">Utøvere</a></li>
+            <li><a href="InsertPage.jsp">Legg til ny utøver</a></li>
 
         </ul>
     </div>
@@ -50,6 +50,7 @@
             <th>Fornavn</th>
             <th>Etternavn</th>
             <th>Fodt</th>
+            <th>Action</th>
         </tr>
         </thead>
 
@@ -67,6 +68,9 @@
                 <td>${utover.fornavn}</td>
                 <td>${utover.etternavn}</td>
                 <td>${utover.fodt}</td>
+                <td><a href="<%=request.getContextPath()%>/seresultater?id=${utover.uID}">Se testresultater</a>
+                &nbsp;
+                <a href="<%=request.getContextPath()%>/endreutover?id=${utover.uID}">Endre utøver</a></td>
 
 
             </tr>
@@ -80,8 +84,9 @@
 </section>
 <div class="container">
     <section id="main">
-        <h1>Velkommen</h1>
-        <p>Teskt teskt teskt</p>
+        <button onClick="history.go(2);">Refresh Page</button>
+
+
     </section>
     <aside id="sidebar">
         <p>Tekst tekst teskrt</p>
