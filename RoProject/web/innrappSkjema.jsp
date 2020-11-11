@@ -12,35 +12,28 @@
     <link rel="stylesheet" type="text/css" href="Innrapportering.css">
 </head>
 <body>
-<div class="formWrapper">
-    <fieldset>
-        <legend></legend>
-        <label for="år">År:</label>
-        <select class="select-css" id="år" name="år">
-            <option selected disabled value="">Velg</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-        </select>
-        <label for="uke">Uke:</label>
-        <select class="select-css" id="uke" name="uke">
-            <option selected disabled value="">Velg</option>
-            <option value="2">2</option>
-            <option value="11">11</option>
-            <option value="44">44</option>
-        </select>
-        <label for="kjønn">Kjønn:</label>
-        <select class="select-css" id="kjønn" name="kjønn">
-            <option selected disabled value="">Velg</option>
-            <option value="menn">Menn</option>
-            <option value="kvinner">Kvinner</option>
-        </select>
-    </fieldset>
-    </form>
-</div>
-<br>
 
 <h2>Senior</h2>
-<form method="post" action="">
+<form method="post" action="insertSenior">
+    <div class="formWrapper">
+        <fieldset>
+            <legend></legend>
+            <label for="ar">År:</label>
+            <select class="select-css" name="ar">
+                <option selected disabled value="">Velg</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </select>
+            <label for="uke">Uke:</label>
+            <select class="select-css" name="uke">
+                <option selected disabled value="">Velg</option>
+                <option value="2">2</option>
+                <option value="11">11</option>
+                <option value="44">44</option>
+            </select>
+        </fieldset>
+    </div>
+
     <table id="Senior">
         <thead>
         <th>Utøver</th>
@@ -57,11 +50,12 @@
         </thead>
         <tr>
             <td>
-                <select class="1select" id="utøver" name="utøverID">
-                    <option value="dnf">Uferdig</option>
+                <select class="1select" id="utøver" name="utoverID">
+                    <option value="71">71</option>
                 </select>
             </td>
-            <td contenteditable="true"></td>
+            <!--<td contenteditable="true" name="watt_60"></td> -->
+             <td><input type="number" name="watt_60" required></td>
             <td>
                 <select class="1select" id="bevegelighet" name="bevegelighet">
                     <option selected disabled value="">Velg</option>
@@ -71,7 +65,8 @@
                     <option value="3">3</option>
                 </select>
             </td>
-            <td contenteditable="true"></td>
+            <!--<td contenteditable="true" name="watt_5000_m"></td>-->
+            <td><input type="number" name="watt_5000_m" required></td>
             <td>
                 <select class="2select" name="5000Min">
                     <option selected disabled value="">min</option>
@@ -200,7 +195,9 @@
                     <option value="59">59</option>
                 </select>
             </td>
-            <td contenteditable="true"></td>
+           <!-- <td contenteditable="true" name="watt_2000"></td>-->
+            <td><input type="number" name="watt_2000" required></td>
+
             <td>
                 <select class="2select" name="2000Min">
                     <option selected disabled value="">min</option>
@@ -329,10 +326,14 @@
                     <option value="59">59</option>
                 </select>
             </td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
+           <!-- <td contenteditable="true" name="Liggro(%)"></td>-->
+            <td><input type="number" name="Liggro(%)" required></td>
+           <!-- <td contenteditable="true" name="Liggro(kg)"></td>-->
+            <td><input type="number" name="Liggro(kg)" required></td>
+           <!-- <td contenteditable="true" name="Knebøy(%)"></td>-->
+            <td><input type="number" name="Kneboy(%)" required></td>
+           <!-- <td contenteditable="true" name="Knebøy(kg)"></td>-->
+            <td><input type="number" name="Kneboy(kg)" required></td>
             <td><input type="button" value="Slett" onclick="deleteRowSenior(this)"></td>
         </tr>
     </table>
@@ -348,7 +349,34 @@
 </div>
 
 <h2>Junior A</h2>
+
 <form method="post" action="">
+
+    <div class="formWrapper">
+        <fieldset>
+            <legend></legend>
+            <label for="år">År:</label>
+            <select class="select-css" name="ar">
+                <option selected disabled value="">Velg</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </select>
+            <label for="uke">Uke:</label>
+            <select class="select-css" name="uke">
+                <option selected disabled value="">Velg</option>
+                <option value="2">2</option>
+                <option value="11">11</option>
+                <option value="44">44</option>
+            </select>
+            <label for="kjønn">Kjønn:</label>
+            <select class="select-css" name="kjonn">
+                <option selected disabled value="">Velg</option>
+                <option value="menn">Menn</option>
+                <option value="kvinner">Kvinner</option>
+            </select>
+        </fieldset>
+    </div>
+
     <table id="JuniorA">
         <thead>
         <th>Utøver</th>
@@ -654,6 +682,33 @@
 </div>
 
 <h2>Junior B</h2>
+
+<div class="formWrapper">
+    <fieldset>
+        <legend></legend>
+        <label for="år">År:</label>
+        <select class="select-css" name="år">
+            <option selected disabled value="">Velg</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+        </select>
+        <label for="uke">Uke:</label>
+        <select class="select-css" name="uke">
+            <option selected disabled value="">Velg</option>
+            <option value="2">2</option>
+            <option value="11">11</option>
+            <option value="44">44</option>
+        </select>
+        <label for="kjønn">Kjønn:</label>
+        <select class="select-css" name="kjønn">
+            <option selected disabled value="">Velg</option>
+            <option value="menn">Menn</option>
+            <option value="kvinner">Kvinner</option>
+        </select>
+    </fieldset>
+</div>
+
+
 <form method="post" action="">
     <table id="JuniorB">
         <thead>
@@ -958,8 +1013,39 @@
 </div>
 
 <h2>Junior C</h2>
+
 <form method="post" action="">
+
+    <div class="formWrapper">
+        <fieldset>
+            <legend></legend>
+            <label for="år">År:</label>
+            <select class="select-css" name="år">
+                <option selected disabled value="">Velg</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </select>
+            <label for="uke">Uke:</label>
+            <select class="select-css" name="uke">
+                <option selected disabled value="">Velg</option>
+                <option value="2">2</option>
+                <option value="11">11</option>
+                <option value="44">44</option>
+            </select>
+            <label for="kjønn">Kjønn:</label>
+            <select class="select-css" name="kjønn">
+                <option selected disabled value="">Velg</option>
+                <option value="menn">Menn</option>
+                <option value="kvinner">Kvinner</option>
+            </select>
+        </fieldset>
+    </div>
+
     <table id="JuniorC">
+
+
+
+
         <thead>
         <th>Utøver</th>
         <th>60"Watt</th>

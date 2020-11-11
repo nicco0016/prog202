@@ -19,7 +19,12 @@ public class Utover {
         this.fodt = fodt;
     }
 
-
+    public Utover(int uID, String klasseID, String fornavn, String etternavn) {
+        this.uID = uID;
+        KlasseID = klasseID;
+        this.fornavn = fornavn;
+        this.etternavn = etternavn;
+    }
 
     public Utover(int uID) {
         this.uID = uID;

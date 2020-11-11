@@ -6,18 +6,28 @@
 <body>
 <div align="center">
     <h1>Legg til ny utøver</h1>
-    <form action="/RoProject/LeggTil" method="POST">
+    <form action="LeggTil" method="POST">
+
         <p>
-            UtøverID <input type="number" name="uID" required />
+            <label for="kjonn">Velg Kjønn:</label>
+            <select id="kjonn" name="kjonn" required>
+                <option value="Mann">Mann</option>
+                <option value="Kvinne">Kvinne</option>
+            </select>
         </p>
         <p>
-            KjønnID <input type="text" name="kjonnID" required />
-        </p>
-        <p>
-            KlubbID<input type="text" name="klubbID" required />
-        </p>
-        <p>
-            KlasseID <input type="text" name="klasseID" required />
+            <label for="klasse">Velg roklasse:</label>
+            <select id="klasse" name="klasse" required>
+                <option value="">Ikke valgt</option>
+                <option value="Senior menn">Senior menn</option>
+                <option value="Senior kvinner">Senior kvinner</option>
+                <option value="Junior A gutter">Junior A gutter</option>
+                <option value="Junior A jenter">Junior A jenter</option>
+                <option value="Junior B gutter">Junior B gutter</option>
+                <option value="Junior B jenter">Junior B jenter</option>
+                <option value="Junior C gutter">Junior C gutter</option>
+                <option value="Junior C jenter">Junior C jenter</option>
+            </select>
         </p>
         <p>
             Fornavn <input type="text" name="fornavn" required />

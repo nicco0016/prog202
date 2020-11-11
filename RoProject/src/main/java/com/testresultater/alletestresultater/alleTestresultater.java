@@ -91,6 +91,56 @@ public class alleTestresultater {
         }
     }
 
+    public Testresultati getKlasseID (Testresultati param) {
+        Testresultati testres = null;
+        try {
+            String query = "SELECT klasseID FROM Roprosjekt.utover  where uID = ?";
+            Connection connection = createConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, param.getuID());
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()){
+                Integer klasseID = (rs.getInt("klasseID"));
+                testres = new Testresultati(klasseID);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return testres;
+    }
+
+    public void insertTestresultat_mid_senior(Testresultati param){
+
+        try {
+            String query = "INSERT INTO testresultater_mid (uID, år, uke, klasseID, watt_60, bevegelighet, watt_5000_m, tid_5000_m, watt_2000_m, tid_2000_m, prosent_ligg_ro, kilo_ligg_ro, prosent_knebøy, kilo_knebøy) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, param.getuID());
+            statement.setInt(2, param.getÅr());
+            statement.setInt(3, param.getUke());
+            statement.setInt(4, param.getKlasseID());
+            statement.setFloat(5, param.getWatt_60());
+            statement.setInt(6, param.getBevegelighet());
+            statement.setFloat(7, param.getWatt_5000_m());
+            String tid5000 = param.getMin_5000() + "." + param.getSek_5000();
+            statement.setString(8, tid5000);
+            statement.setFloat(9, param.getWatt_2000_m());
+            String tid2000 = param.getMin_2000() + "." + param.getSek_2000();
+            statement.setString(10, tid2000);
+            statement.setFloat(11, param.getProsent_ligg_ro());
+            statement.setFloat(12, param.getKilo_ligg_ro());
+            statement.setFloat(13, param.getProsent_knebøy());
+            statement.setFloat(14, param.getKilo_knebøy());
+            statement.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public Testresultati  getarukeklasseid (Testresultati param) {
         Testresultati testres = null;
 

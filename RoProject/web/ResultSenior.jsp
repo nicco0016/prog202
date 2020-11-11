@@ -32,7 +32,7 @@
 <section id="showcase">
 
     <table>
-        <h1>Liste over alle testresulatter for Senior</h1>
+        <h1>--------------------------------------------------------- Liste over alle testresulatter for Senior ----------------------------------------------------------</h1>
 
 
         <br>

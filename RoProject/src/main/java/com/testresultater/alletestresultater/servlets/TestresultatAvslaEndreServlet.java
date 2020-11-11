@@ -8,8 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
-@WebServlet(name = "TestresultatAvslaEndreServlet", urlPatterns = {"/endre"})
+@WebServlet(name = "TestresultatAvslaEndreServlet", urlPatterns = {"/endre", "/endreutover"})
 public class TestresultatAvslaEndreServlet extends HttpServlet {
     private int uid;
 
@@ -19,11 +20,27 @@ public class TestresultatAvslaEndreServlet extends HttpServlet {
         int Uid = Integer.parseInt(request.getParameter("id"));
         uid = Uid;
 
+        String action = request.getServletPath();
+
+        switch (action) {
+            case "/endre":
+                endretestresultat(request, response);
+                break;
+            case "/endreutover":
+                endreutover(request, response);
+                break;
+        }
+    }
+
+    private void endretestresultat(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Cookie cookie = new Cookie("UID", uid + "");
         response.addCookie(cookie);
         response.sendRedirect("endre.jsp");
+    }
 
-
-
+    private void endreutover(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Cookie cookie = new Cookie("UID", uid + "");
+        response.addCookie(cookie);
+        response.sendRedirect("endreutover.jsp");
     }
 }

@@ -76,16 +76,28 @@ public class alleUtovere {
 
     public void insertUtover(utoveri utoverparam){
         try {
+            int maxno = 0;
+            String query1 = "SELECT max(uID)from utover";
             Connection connection = createConnection();
-            PreparedStatement statement = connection.prepareStatement(QUERY2);
-            statement.setInt(1, utoverparam.getuID());
-            statement.setInt(2, utoverparam.getKjonnID());
-            statement.setInt(3, utoverparam.getKlubbID());
-            statement.setInt(4, utoverparam.getKlasseID());
-            statement.setString(5, utoverparam.getFornavn());
-            statement.setString(6, utoverparam.getEtternavn());
-            statement.setInt(7, utoverparam.getFodt());
-            statement.execute();
+            PreparedStatement statement = connection.prepareStatement(query1);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()){
+                int sisteutover = (rs.getInt(1));
+                maxno = sisteutover;
+            }
+            String query2 = "INSERT INTO utover VALUES(?,?,?,?,?,?,?)";
+            Connection connection2 = createConnection();
+            PreparedStatement preparedStatement = connection2.prepareStatement(query2);
+            int Maxno = maxno + 1;
+            preparedStatement.setInt(1, Maxno);
+            preparedStatement.setInt(2, utoverparam.getKjonnID());
+            preparedStatement.setInt(3, utoverparam.getKlasseID());
+            preparedStatement.setInt(4, utoverparam.getKlubbID());
+            preparedStatement.setString(5, utoverparam.getFornavn());
+            preparedStatement.setString(6, utoverparam.getEtternavn());
+            preparedStatement.setInt(7, utoverparam.getFodt());
+            preparedStatement.execute();
+
 
 
 
@@ -134,6 +146,27 @@ public class alleUtovere {
 
     }
 
+    public void endreutover(utoveri param) {
+        try {
+            String query = "update utover set klasseID = ?, fornavn = ?, etternavn = ? where uID = ?";
+            Connection connection2 = createConnection();
+            PreparedStatement preparedStatement = connection2.prepareStatement(query);
+            preparedStatement.setInt(1, param.getKlasseID());
+            preparedStatement.setString(2, param.getFornavn());
+            preparedStatement.setString(3, param.getEtternavn());
+            preparedStatement.setInt(4, param.getuID());
+            preparedStatement.execute();
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+
+        }
+
+    }
+
     public void destroy () {
         try {
             connection.close();
@@ -141,5 +174,7 @@ public class alleUtovere {
             e.printStackTrace();
         }
     }
+
+
 }
 
