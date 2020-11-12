@@ -18,6 +18,7 @@ import java.util.List;
 public class v2utoverServlet extends HttpServlet {
       private int Uid;
       private String roklubb;
+      private int klasse;
 
 
 
@@ -89,6 +90,32 @@ public class v2utoverServlet extends HttpServlet {
         String Kjonn = utv.getKjonnID();
         String Roklubb = utv.getKlubbID();
         String Roklasse = utv.getKlasseID();
+        if (Roklasse.contains("Senior menn")){
+            klasse = 1;
+        }
+        else if (Roklasse.contains("Senior kvinner")){
+            klasse = 2;
+        }
+        else if (Roklasse.contains("Junior A gutter")){
+            klasse = 3;
+        }
+        else if (Roklasse.contains("Junior A jenter")){
+            klasse = 4;
+        }
+        else if (Roklasse.contains("Junior B gutter")){
+            klasse = 5;
+        }
+        else if (Roklasse.contains("Junior B jenter")){
+            klasse = 6;
+        }
+        else if (Roklasse.contains("Junior C gutter")){
+            klasse = 7;
+        }
+        else if (Roklasse.contains("Junior C jenter")){
+            klasse = 8;
+        }
+        Cookie coockie = new Cookie("ROKLASSE", klasse + "");
+        response.addCookie(coockie);
         String Fornavn = utv.getFornavn();
         String Etternavn = utv.getEtternavn();
         int Fodt = utv.getFodt();
