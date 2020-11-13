@@ -23,6 +23,7 @@
 <nav id="navbar">
     <div class="container">
         <ul>
+            <li><a href="<%=request.getContextPath()%>/sammenligbeste">Sammenlign mot klassens beste</a></li>
             <td><a href="<%=request.getContextPath()%>/testresultater?id=${utoverid}">Mine testresultater</a></td> <!--Sender til UtoverresultServlet-->
             <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${roklubb}">Utøvere i ${roklubb} roklubb</a></td> <!-- Sender til v2utoverServlet -->
             <li><a href="Utover.jsp">Utøvere</a></li>

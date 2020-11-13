@@ -2,6 +2,7 @@ package com.testresultater.alletestresultater.objekter;
 
 public class testresultat {
     private int uID;
+    private int uID2;
     private int år;
     private int uke;
     private String klasseID;
@@ -55,6 +56,11 @@ public class testresultat {
         this.klasseID = klasseID;
     }
 
+    public testresultat(int uID, int uID2) {
+        this.uID = uID;
+        this.uID2 = uID2;
+    }
+
     public testresultat(String klasseID) {
         this.klasseID = klasseID;
     }
@@ -102,7 +108,13 @@ public class testresultat {
 
     }
 
+    public int getuID2() {
+        return uID2;
+    }
 
+    public void setuID2(int uID2) {
+        this.uID2 = uID2;
+    }
 
     public int getuID() {
         return uID;

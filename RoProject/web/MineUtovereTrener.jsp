@@ -69,8 +69,10 @@
                 <td>${utover.etternavn}</td>
                 <td>${utover.fodt}</td>
                 <td><a href="<%=request.getContextPath()%>/seresultater?id=${utover.uID}">Se testresultater</a>
-                &nbsp;
-                <a href="<%=request.getContextPath()%>/endreutover?id=${utover.uID}">Endre utøver</a></td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="<%=request.getContextPath()%>/sammenlign?id2=${utover.uID}">Sammenlign testresultater</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="<%=request.getContextPath()%>/endreutover?id=${utover.uID}">Endre utøver</a></td>
 
 
             </tr>
