@@ -102,7 +102,9 @@ public class alleTestresultater {
 
             while(rs.next()){
                 Integer klasseID = (rs.getInt("klasseID"));
-                testres = new Testresultati(klasseID);
+                testres = new Testresultati();
+                testres.setKlasseID(klasseID);
+
             }
 
         } catch (SQLException e) {
