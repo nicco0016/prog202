@@ -9,6 +9,7 @@ public class Trener {
         this.klubbNavn = klubbNavn;
     }
 
+
     public Trener(int klubbID) {
         this.klubbID = klubbID;
     }

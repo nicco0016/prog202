@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
@@ -50,10 +51,15 @@
         </thead>
         <tr>
             <td>
-                <select class="1select" id="utøver" name="utoverID">
-                    <option value="71">71</option>
+
+                <select name="utoverID" >
+                    <c:forEach var = "id" items = "${uidliste}">
+                    <option value="${id.klubbID}">${id.klubbID}</option>
+                    </c:forEach>
                 </select>
+
             </td>
+
             <!--<td contenteditable="true" name="watt_60"></td> -->
              <td><input type="number" name="watt_60" required></td>
             <td>

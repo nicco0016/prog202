@@ -21,6 +21,7 @@
 <nav id="navbar">
     <div class="container">
         <ul>
+            <li><a href="<%=request.getContextPath()%>/getuiddropdown">Legg til testresultater V.2</a></li>
             <li><a href="innrappSkjema.jsp">Legg til testresultater</a></li>
             <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${KlubbNavn}">Utøvere i ${KlubbNavn} roklubb</a></td> <!-- Sender til v2utoverServlet -->
             <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>

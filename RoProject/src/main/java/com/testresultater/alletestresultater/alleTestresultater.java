@@ -3,6 +3,7 @@ package com.testresultater.alletestresultater;
 
 import com.testresultater.alletestresultater.objekter.Testresultati;
 import com.testresultater.alletestresultater.objekter.testresultat;
+import com.trener.Trener;
 import com.utover.alleutovere.objekter.Utover;
 
 import java.sql.*;
@@ -644,7 +645,27 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
     }
 
 
+            public List<Trener> getallUID(Trener param) throws SQLException {
+                List<Trener> idList = new ArrayList<>();
+                try {
+                    String query = "SELECT uID FROM utover WHERE klubbID = ? ORDER by uID ASC;";
 
+
+                    Connection connection = createConnection();
+                    PreparedStatement preparedStatement = connection.prepareStatement(query);
+                    preparedStatement.setInt(1, param.getKlubbID());
+                    ResultSet rs = preparedStatement.executeQuery();
+
+                    while (rs.next()){
+                        int id = (rs.getInt(1));
+                        idList.add(new Trener(id));
+
+                    }
+            } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return idList;
+            }
 
 
 public void destroy () {
@@ -654,6 +675,7 @@ public void destroy () {
             e.printStackTrace();
         }
     }
+
 
 
 }
