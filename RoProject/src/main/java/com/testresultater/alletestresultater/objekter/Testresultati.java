@@ -110,6 +110,9 @@ public class Testresultati {
         this.uID = uID;
     }
 
+   public Testresultati(){}
+
+
     public String getFornavn() {
         return fornavn;
     }
