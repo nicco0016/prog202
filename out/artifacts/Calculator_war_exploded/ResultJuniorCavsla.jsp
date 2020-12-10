@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 13/10/2020
-  Time: 18:57
+  Date: 29/10/2020
+  Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -56,19 +56,13 @@
             <th>_3000_løp</th>
             <th>antall_Kr_hev</th>
             <th>Cm_Sargeant</th>
-
-
-
+            <th>Handling</th>
 
         </tr>
         </thead>
 
-
-
         <c:forEach var = "testresultat" items = "${listTestresultater}">
-
             <tr>
-
 
                 <td>${testresultat.uID}</td>
                 <td>${testresultat.fornavn}</td>
@@ -82,9 +76,7 @@
                 <td>${testresultat._3000_løp}</td>
                 <td>${testresultat.antall_Kr_hev}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-
-
-
+                <td><a href="<%=request.getContextPath()%>/endre?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
 
 
 
@@ -113,4 +105,3 @@
 </footer>
 </body>
 </html>
-

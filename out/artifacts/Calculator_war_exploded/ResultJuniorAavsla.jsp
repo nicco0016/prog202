@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 13/10/2020
-  Time: 18:57
+  Date: 29/10/2020
+  Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -43,22 +43,23 @@
         <thead>
         <tr>
 
-
+            <th>score</th>
             <th>UtoverID</th>
             <th>fornavn</th>
             <th>etternavn</th>
             <th>år</th>
             <th>uke</th>
             <th>klasseID</th>
-            <th>score</th>
             <th>watt_60</th>
             <th>bevegelighet</th>
-            <th>_3000_løp</th>
-            <th>antall_Kr_hev</th>
+            <th>watt_5000_m</th>
+            <th>tid_5000_m</th>
+            <th>watt_2000_m</th>
+            <th>tid_2000_m</th>
+            <th>prosent_ligg_ro</th>
+            <th>kilo_ligg_ro</th>
             <th>Cm_Sargeant</th>
-
-
-
+            <th>Handling</th>
 
         </tr>
         </thead>
@@ -69,25 +70,23 @@
 
             <tr>
 
-
+                <td>${testresultat.score}</td>
                 <td>${testresultat.uID}</td>
                 <td>${testresultat.fornavn}</td>
                 <td>${testresultat.etternavn}</td>
                 <td>${testresultat.år}</td>
                 <td>${testresultat.uke}</td>
                 <td>${testresultat.klasseID}</td>
-                <td>${testresultat.score}</td>
                 <td>${testresultat.watt_60}</td>
                 <td>${testresultat.bevegelighet}</td>
-                <td>${testresultat._3000_løp}</td>
-                <td>${testresultat.antall_Kr_hev}</td>
+                <td>${testresultat.watt_5000_m}</td>
+                <td>${testresultat.tid_5000_m}</td>
+                <td>${testresultat.watt_2000_m}</td>
+                <td>${testresultat.tid_2000_m}</td>
+                <td>${testresultat.prosent_ligg_ro}</td>
+                <td>${testresultat.kilo_ligg_ro}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-
-
-
-
-
-
+                <td><a href="<%=request.getContextPath()%>/endre?id=${testresultat.uID}">Endre</a></td>
 
             </tr>
 
@@ -113,4 +112,3 @@
 </footer>
 </body>
 </html>
-

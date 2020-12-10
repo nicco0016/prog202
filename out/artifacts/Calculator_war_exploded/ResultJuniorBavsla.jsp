@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 13/10/2020
-  Time: 18:57
+  Date: 29/10/2020
+  Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -53,12 +53,13 @@
             <th>score</th>
             <th>watt_60</th>
             <th>bevegelighet</th>
-            <th>_3000_løp</th>
+            <th>sek_3000_m</th>
+            <th>min_3000_m</th>
+            <th>watt_2000_m</th>
+            <th>tid_2000_m</th>
             <th>antall_Kr_hev</th>
             <th>Cm_Sargeant</th>
-
-
-
+            <th>Handling</th>
 
         </tr>
         </thead>
@@ -79,9 +80,13 @@
                 <td>${testresultat.score}</td>
                 <td>${testresultat.watt_60}</td>
                 <td>${testresultat.bevegelighet}</td>
-                <td>${testresultat._3000_løp}</td>
+                <td>${testresultat.sek_3000_m}</td>
+                <td>${testresultat.min_3000_m}</td>
+                <td>${testresultat.watt_2000_m}</td>
+                <td>${testresultat.tid_2000_m}</td>
                 <td>${testresultat.antall_Kr_hev}</td>
                 <td>${testresultat.cm_Sargeant}</td>
+                <td><a href="<%=request.getContextPath()%>/endre?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
 
 
 
@@ -113,4 +118,3 @@
 </footer>
 </body>
 </html>
-

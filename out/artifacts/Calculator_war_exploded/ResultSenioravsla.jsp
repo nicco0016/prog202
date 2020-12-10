@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 13/10/2020
-  Time: 18:57
+  Date: 29/10/2020
+  Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -32,7 +32,7 @@
 <section id="showcase">
 
     <table>
-        <caption>Liste over alle testresultater</caption>
+        <h1>Liste over alle testresulatter for Senior</h1>
 
 
         <br>
@@ -53,12 +53,15 @@
             <th>score</th>
             <th>watt_60</th>
             <th>bevegelighet</th>
-            <th>_3000_løp</th>
-            <th>antall_Kr_hev</th>
-            <th>Cm_Sargeant</th>
-
-
-
+            <th>watt_5000_m</th>
+            <th>tid_5000_m</th>
+            <th>watt_2000_m</th>
+            <th>tid_2000_m</th>
+            <th>prosent_ligg_ro</th>
+            <th>kilo_ligg_ro</th>
+            <th>prosent_knebøy</th>
+            <th>kilo_knebøy</th>
+            <th>Handling</th>
 
         </tr>
         </thead>
@@ -79,9 +82,16 @@
                 <td>${testresultat.score}</td>
                 <td>${testresultat.watt_60}</td>
                 <td>${testresultat.bevegelighet}</td>
-                <td>${testresultat._3000_løp}</td>
-                <td>${testresultat.antall_Kr_hev}</td>
-                <td>${testresultat.cm_Sargeant}</td>
+                <td>${testresultat.watt_5000_m}</td>
+                <td>${testresultat.tid_5000_m}</td>
+                <td>${testresultat.watt_2000_m}</td>
+                <td>${testresultat.tid_2000_m}</td>
+                <td>${testresultat.prosent_ligg_ro}</td>
+                <td>${testresultat.kilo_ligg_ro}</td>
+                <td>${testresultat.prosent_knebøy}</td>
+                <td>${testresultat.kilo_knebøy}</td>
+                <td><a href="<%=request.getContextPath()%>/endre?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
+
 
 
 
@@ -96,6 +106,7 @@
         </c:forEach>
 
     </table>
+
 
 </section>
 <div class="container">
@@ -113,4 +124,3 @@
 </footer>
 </body>
 </html>
-

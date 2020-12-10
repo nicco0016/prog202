@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 22/10/2020
-  Time: 19:56
+  Date: 29/10/2020
+  Time: 14:45
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,10 +21,9 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="LeggInnTestresultater.jsp">Legg til testresultater</a></li>
+            <li><a href="<%=request.getContextPath()%>/alleutovere">Mine utøvere</a></li>
             <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>
-            <li><a href="AvslagTestresultater.jsp">Avlag på innrapportering</a></li>
-            <li><a href="LeggInnTestResTrenerV2.jsp">Legg til</a></li>
+            <li><a href="LeggInnTestResTrenerV2.jsp">Legg til testresultater</a></li>
 
         </ul>
     </div>
@@ -33,22 +32,8 @@
 <section id="showcase">
 
 
-    <form action="parameter" method="GET">
+    <form action="testresavslag" method="GET">
 
-        <label for="år">Velg år:</label>
-        <select id="år" name="år" required>
-            <option value="">Ikke valgt</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-        </select>
-        <label for="uke">Velg uke:</label>
-        <select id="uke" name="uke" required>
-            <option value="">Ikke valgt</option>
-            <option value="2">2</option>
-            <option value="11">11</option>
-            <option value="44">44</option>
-        </select>
         <label for="klasse">Velg roklasse:</label>
         <select id="klasse" name="klasse" required>
             <option value="">Ikke valgt</option>

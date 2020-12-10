@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Norges Roforbund</title>
-    <link rel="stylesheet" type="text/css" href="stylerResult.css">
+    <link rel="stylesheet" type="text/css" href="HentUtTestresultaterUtover.css">
 </head>
 <body>
 <header id="main-header">
@@ -84,6 +84,7 @@
                 <td>${testresultat.antall_Kr_hev}</td>
                 <td>${testresultat.cm_Sargeant}</td>
                 <td><a href="<%=request.getContextPath()%>/godkjent?id=<c:out value ='${testresultat.uID}'/>">Godkjent</a></td>
+                <td><a href="<%=request.getContextPath()%>/ikkegodkjent?id=<c:out value ='${testresultat.uID}'/>">Avlså</a></td>
 
 
 

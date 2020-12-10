@@ -1,10 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
-  User: nicolaibjorntvedt
-  Date: 07/10/2020
-  Time: 14:48
+  User: Julie
+  Date: 20.11.2020
+  Time: 14:59
   To change this template use File | Settings | File Templates.
 --%>
+<
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="com.testresultater.alletestresultater.alleTestresultater"%>
@@ -32,25 +33,19 @@
 <section id="showcase">
 
     <table>
-        <h1>Liste over alle testresulatter for Senior</h1>
-
+        <caption>Resultater for 2018</caption>
 
         <br>
 
-
-
-
         <thead>
         <tr>
-
-
+            <th>score</th>
             <th>UtoverID</th>
             <th>fornavn</th>
             <th>etternavn</th>
             <th>år</th>
             <th>uke</th>
             <th>klasseID</th>
-            <th>score</th>
             <th>watt_60</th>
             <th>bevegelighet</th>
             <th>watt_5000_m</th>
@@ -59,27 +54,70 @@
             <th>tid_2000_m</th>
             <th>prosent_ligg_ro</th>
             <th>kilo_ligg_ro</th>
-            <th>prosent_knebøy</th>
-            <th>kilo_knebøy</th>
-
-
+            <th>Cm_Sargeant</th>
         </tr>
         </thead>
 
-
-
-        <c:forEach var = "testresultat" items = "${listTestresultater}">
-
+        <c:forEach var = "testresultat1" items = "${listsammenligeår2018}">
             <tr>
+                <td>${testresultat1.score}</td>
+                <td>${testresultat1.uID}</td>
+                <td>${testresultat1.fornavn}</td>
+                <td>${testresultat1.etternavn}</td>
+                <td>${testresultat1.år}</td>
+                <td>${testresultat1.uke}</td>
+                <td>${testresultat1.klasseID}</td>
+                <td>${testresultat1.watt_60}</td>
+                <td>${testresultat1.bevegelighet}</td>
+                <td>${testresultat1.watt_5000_m}</td>
+                <td>${testresultat1.tid_5000_m}</td>
+                <td>${testresultat1.watt_2000_m}</td>
+                <td>${testresultat1.tid_2000_m}</td>
+                <td>${testresultat1.prosent_ligg_ro}</td>
+                <td>${testresultat1.kilo_ligg_ro}</td>
+                <td>${testresultat1.cm_Sargeant}</td>
 
+            </tr>
 
+        </c:forEach>
+
+    </table>
+
+    <table>
+        <caption>Resultater for 2019</caption>
+
+        <br>
+
+        <thead>
+        <tr>
+            <th>score</th>
+            <th>UtoverID</th>
+            <th>fornavn</th>
+            <th>etternavn</th>
+            <th>år</th>
+            <th>uke</th>
+            <th>klasseID</th>
+            <th>watt_60</th>
+            <th>bevegelighet</th>
+            <th>watt_5000_m</th>
+            <th>tid_5000_m</th>
+            <th>watt_2000_m</th>
+            <th>tid_2000_m</th>
+            <th>prosent_ligg_ro</th>
+            <th>kilo_ligg_ro</th>
+            <th>Cm_Sargeant</th>
+        </tr>
+        </thead>
+
+        <c:forEach var = "testresultat" items = "${listsammenligeår2019}">
+            <tr>
+                <td>${testresultat.score}</td>
                 <td>${testresultat.uID}</td>
                 <td>${testresultat.fornavn}</td>
                 <td>${testresultat.etternavn}</td>
                 <td>${testresultat.år}</td>
                 <td>${testresultat.uke}</td>
                 <td>${testresultat.klasseID}</td>
-                <td>${testresultat.score}</td>
                 <td>${testresultat.watt_60}</td>
                 <td>${testresultat.bevegelighet}</td>
                 <td>${testresultat.watt_5000_m}</td>
@@ -88,25 +126,13 @@
                 <td>${testresultat.tid_2000_m}</td>
                 <td>${testresultat.prosent_ligg_ro}</td>
                 <td>${testresultat.kilo_ligg_ro}</td>
-                <td>${testresultat.prosent_knebøy}</td>
-                <td>${testresultat.kilo_knebøy}</td>
-
-
-
-
-
-
-
+                <td>${testresultat.cm_Sargeant}</td>
 
             </tr>
-
-
 
         </c:forEach>
 
     </table>
-
-
 </section>
 <div class="container">
     <section id="main">
@@ -123,6 +149,4 @@
 </footer>
 </body>
 </html>
-
-
 

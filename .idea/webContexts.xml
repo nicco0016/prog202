@@ -3,6 +3,8 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/RoProject/out/artifacts/RoProject_war_exploded/TopResultater.jsp" value="file://$PROJECT_DIR$/RoProject/out/artifacts/RoProject_war_exploded" />
+        <entry key="file://$PROJECT_DIR$/RoProject/out/artifacts/RoProject_war_exploded/TopResultater2.jsp" value="file://$PROJECT_DIR$/RoProject/out/artifacts/RoProject_war_exploded" />
         <entry key="file://$PROJECT_DIR$/RoProject/web/fakeLogin.jsp" value="file://$PROJECT_DIR$/RoProject/web" />
       </map>
     </option>

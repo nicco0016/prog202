@@ -15,11 +15,13 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "SammenlignServlet", urlPatterns = {"/sammenlign", "/sammenligbeste"})
+@WebServlet(name = "SammenlignServlet", urlPatterns = {"/sammenlign", "/sammenligbeste", "/SammenligneÅr"})
 public class SammenlignServlet extends HttpServlet {
     private int uid;
     private int uid2;
     private int Klasse;
+    private int år1;
+    private int år2;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -43,6 +45,7 @@ public class SammenlignServlet extends HttpServlet {
         }
 
 
+
         String action = request.getServletPath();
         try {
             switch (action) {
@@ -53,6 +56,9 @@ public class SammenlignServlet extends HttpServlet {
                     sammenligbeste(request, response);
                     break;
 
+                case "/SammenligneÅr":
+                    SammenligneÅr(request, response);
+                    break;
             }
         } catch (IOException | SQLException e) {
             e.printStackTrace();
@@ -86,5 +92,22 @@ public class SammenlignServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("sammenlign2utovere.jsp");
             dispatcher.forward(request, response);
         }
+
+
+    private void SammenligneÅr (HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        int år = Integer.parseInt(request.getParameter("id2"));
+        uid2 = Uid2;
+        testresultat testres1 = new testresultat(år1);
+        testresultat testres2 = new testresultat(år2);
+        alleTestresultater alletestres = new alleTestresultater();
+        List<testresultat> listsammenlig1 = alletestres.sammenlignutover(testres1);
+        List<testresultat> listsammenlig2 = alletestres.sammenlignutover(testres2);
+        request.setAttribute("listsammenlig1", listsammenlig1);
+        request.setAttribute("listsammenlig2", listsammenlig2);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("SammenligneÅr.jsp");
+        dispatcher.forward(request, response);
+    }
+
     }
 

@@ -25,9 +25,9 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="<%=request.getContextPath()%>/alleutovere">Mine utøvere</a></li>
-            <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>
-            <li><a href="LeggInnTestResTrenerV2.jsp">Legg til testresultater</a></li>
+            <td><a href="<%=request.getContextPath()%>/testresultater?id=${utoverid}">Mine testresultater</a></td> <!--Sender til UtoverresultServlet-->
+            <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${roklubb}">Utøvere i ${roklubb} roklubb</a></td> <!-- Sender til v2utoverServlet -->
+            <li><a href="Utover.jsp">Utøvere</a></li>
 
         </ul>
     </div>

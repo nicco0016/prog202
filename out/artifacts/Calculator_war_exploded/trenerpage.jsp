@@ -21,7 +21,7 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="<%=request.getContextPath()%>/alleutovere">Mine utøvere</a></li>
+            <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${KlubbNavn}">Utøvere i ${KlubbNavn} roklubb</a></td> <!-- Sender til v2utoverServlet -->
             <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>
             <li><a href="LeggInnTestResTrenerV2.jsp">Legg til testresultater</a></li>
 
@@ -30,11 +30,9 @@
 </nav>
 
 <section id="showcase">
-    <h2>Fornavn: Ola</h2>
-    <h2>Etternavn:Nordmann </h2>
-    <h2>Kjønn: Mann</h2>
-    <h2>Roklubb: Ordmsund</h2>
-    <h2>Rolle: Trener</h2>
+    <h2>TrenerID: ${KlubbId}</h2>
+    <h2>Roklubb: ${KlubbNavn}</h2>
+
 </section>
 <div class="container">
     <section id="main">
