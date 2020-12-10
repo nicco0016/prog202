@@ -1,5 +1,6 @@
 package com.utover.alleutovere;
 
+import com.dbTOOL;
 import com.utover.alleutovere.objekter.Utover;
 import com.utover.alleutovere.objekter.utoveri;
 
@@ -40,20 +41,20 @@ public class alleUtovere {
         this.UID = UID;
     }*/
 
-    public Connection createConnection(){
+    /*public Connection createConnection(){
         try {
             this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Roprosjekt?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "adminroot");
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return this.connection;
-    }
+    }*/
 
 
     public List <Utover> listOppAlleUtovere(Utover param){
         List<Utover> utovere = new ArrayList<>();
         try {
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY1);
             preparedStatement.setString(1, param.getKlubbID() );
             ResultSet rs = preparedStatement.executeQuery();
@@ -78,7 +79,7 @@ public class alleUtovere {
         try {
             int maxno = 0;
             String query1 = "SELECT max(uID)from utover";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query1);
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
@@ -86,7 +87,7 @@ public class alleUtovere {
                 maxno = sisteutover;
             }
             String query2 = "INSERT INTO utover VALUES(?,?,?,?,?,?,?)";
-            Connection connection2 = createConnection();
+            Connection connection2 = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection2.prepareStatement(query2);
             int Maxno = maxno + 1;
             preparedStatement.setInt(1, Maxno);
@@ -113,7 +114,7 @@ public class alleUtovere {
 
         try {
            // int id = (dummy.getuID());
-            connection = createConnection();
+            connection = dbTOOL.createConnection();
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT utover.uID, kjonn.kjonntype, klubb.klubbNavn, roKlasse.klasseType, utover.fornavn, utover.etternavn, utover.fodt\n" +
                     "from utover utover\n" +
@@ -149,7 +150,7 @@ public class alleUtovere {
     public void endreutover(utoveri param) {
         try {
             String query = "update utover set klasseID = ?, fornavn = ?, etternavn = ? where uID = ?";
-            Connection connection2 = createConnection();
+            Connection connection2 = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection2.prepareStatement(query);
             preparedStatement.setInt(1, param.getKlasseID());
             preparedStatement.setString(2, param.getFornavn());

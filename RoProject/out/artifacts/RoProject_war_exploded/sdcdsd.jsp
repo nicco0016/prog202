@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
@@ -53,15 +52,15 @@
             <td>
 
                 <select name="utoverID" >
-                    <c:forEach var = "id" items = "${senior}">
-                    <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                    <c:forEach var = "id" items = "${uidliste}">
+                        <option value="${id.klubbID}">${id.klubbID}</option>
                     </c:forEach>
                 </select>
 
             </td>
 
             <!--<td contenteditable="true" name="watt_60"></td> -->
-             <td><input type="number" name="watt_60" required></td>
+            <td><input type="number" name="watt_60" required></td>
             <td>
                 <select class="1select" id="bevegelighet" name="bevegelighet">
                     <option selected disabled value="">Velg</option>
@@ -201,7 +200,7 @@
                     <option value="59">59</option>
                 </select>
             </td>
-           <!-- <td contenteditable="true" name="watt_2000"></td>-->
+            <!-- <td contenteditable="true" name="watt_2000"></td>-->
             <td><input type="number" name="watt_2000" required></td>
 
             <td>
@@ -332,13 +331,13 @@
                     <option value="59">59</option>
                 </select>
             </td>
-           <!-- <td contenteditable="true" name="Liggro(%)"></td>-->
+            <!-- <td contenteditable="true" name="Liggro(%)"></td>-->
             <td><input type="number" name="Liggro(%)" required></td>
-           <!-- <td contenteditable="true" name="Liggro(kg)"></td>-->
+            <!-- <td contenteditable="true" name="Liggro(kg)"></td>-->
             <td><input type="number" name="Liggro(kg)" required></td>
-           <!-- <td contenteditable="true" name="Knebøy(%)"></td>-->
+            <!-- <td contenteditable="true" name="Knebøy(%)"></td>-->
             <td><input type="number" name="Kneboy(%)" required></td>
-           <!-- <td contenteditable="true" name="Knebøy(kg)"></td>-->
+            <!-- <td contenteditable="true" name="Knebøy(kg)"></td>-->
             <td><input type="number" name="Kneboy(kg)" required></td>
             <td><input type="button" value="Slett" onclick="deleteRowSenior(this)"></td>
         </tr>
@@ -356,7 +355,7 @@
 
 <h2>Junior A</h2>
 
-<form method="post" action="insertJuniorA">
+<form method="post" action="">
 
     <div class="formWrapper">
         <fieldset>
@@ -392,9 +391,9 @@
         </thead>
         <tr>
             <td>
-                <select class="1select" name="utoverID">
-                    <c:forEach var = "id" items = "${jA}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                <select class="1select" name="utøverID">
+                    <c:forEach var = "id" items = "${uidliste}">
+                        <option value="${id.klubbID}">${id.klubbID}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -684,7 +683,7 @@
 </div>
 
 <h2>Junior B</h2>
-<form method="post" action="insertJuniorB">
+
 <div class="formWrapper">
     <fieldset>
         <legend></legend>
@@ -705,7 +704,7 @@
 </div>
 
 
-
+<form method="post" action="">
     <table id="JuniorB">
         <thead>
         <th>Utøver</th>
@@ -720,9 +719,9 @@
         </thead>
         <tr>
             <td>
-                <select class="1select" name="utoverID">
-                    <c:forEach var = "id" items = "${jB}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                <select class="1select" name="utøver">
+                    <c:forEach var = "id" items = "${uidliste}">
+                        <option value="${id.klubbID}">${id.klubbID}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -1012,7 +1011,7 @@
 
 <h2>Junior C</h2>
 
-<form method="post" action="insertJuniorC">
+<form method="post" action="">
 
     <div class="formWrapper">
         <fieldset>
@@ -1030,10 +1029,19 @@
                 <option value="11">11</option>
                 <option value="44">44</option>
             </select>
+            <label for="kjønn">Kjønn:</label>
+            <select class="select-css" name="kjønn">
+                <option selected disabled value="">Velg</option>
+                <option value="menn">Menn</option>
+                <option value="kvinner">Kvinner</option>
+            </select>
         </fieldset>
     </div>
 
     <table id="JuniorC">
+
+
+
 
         <thead>
         <th>Utøver</th>
@@ -1045,13 +1053,11 @@
         </thead>
         <tr>
             <td>
-                <select class="1select" name="utoverID">
-                    <c:forEach var = "id" items = "${jC}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
-                    </c:forEach>
+                <select class="1select" name="utøver">
+                    <option value="dnf">Uferdig</option>
                 </select>
             </td>
-            <td><input type="number" name="watt_60" required></td>
+            <td contenteditable="true"></td>
             <td>
                 <select class="1select" name="bevegelighet">
                     <option selected disabled value="">Velg</option>
@@ -1189,8 +1195,8 @@
                     <option value="59">59</option>
                 </select>
             </td>
-            <td><input type="number" name="kroppshev" required></td>
-            <td><input type="number" name="Sargeant" required></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
             <td><input type="button" value="Slett" onclick="deleteRowJuniorC(this)"></td>
         </tr>
     </table>

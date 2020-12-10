@@ -1,4 +1,7 @@
-package com.trener;
+package com.innlogging;
+
+import com.trener.Trener;
+import com.trener.trenerlogikk;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "TrenerServlet", urlPatterns = { "/hentTrener"})
+@WebServlet(name = "TrenerServlet", urlPatterns = { "/hentTrener1"})
 public class TrenerServlet extends HttpServlet {
     private int klubbID;
 

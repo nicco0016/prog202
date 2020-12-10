@@ -2,6 +2,7 @@ package com.testresultater.alletestresultater.servlets;
 
 import com.testresultater.alletestresultater.alleTestresultater;
 import com.trener.Trener;
+import com.utover.alleutovere.getUID;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -49,9 +50,15 @@ public class getallUIDServlet extends HttpServlet {
 
     private void ListgetallUID(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         Trener trener = new Trener(klubbid);
-        alleTestresultater alletestres = new alleTestresultater();
-        List<Trener>  idList = alletestres.getallUID(trener);
-        request.setAttribute("uidliste", idList);
+        getUID getuid = new getUID();
+        List<Trener>  senior = getuid.getallUIDSenior(trener);
+        List<Trener>  jA = getuid.getallUIDJuniorA(trener);
+        List<Trener>  jB = getuid.getallUIDJuniorB(trener);
+        List<Trener>  jC = getuid.getallUIDJuniorC(trener);
+        request.setAttribute("senior", senior);
+        request.setAttribute("jA", jA);
+        request.setAttribute("jB", jB);
+        request.setAttribute("jC", jC);
         RequestDispatcher dispatcher = request.getRequestDispatcher("innrappSkjema.jsp");
         dispatcher.forward(request, response);
     }
