@@ -103,14 +103,59 @@ public class Testresultati {
         this.uke = uke;
         this.klasseID = klasseID;
     }
-
-
+    //JuniorA
+    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_5000_m, String min_5000, String sek_5000, float watt_2000_m, String min_2000, String sek_2000, float prosent_ligg_ro, float kilo_ligg_ro, float cm_Sargeant) {
+        this.uID = uID;
+        this.år = år;
+        this.uke = uke;
+        this.klasseID = klasseID;
+        this.watt_60 = watt_60;
+        this.bevegelighet = bevegelighet;
+        this.watt_5000_m = watt_5000_m;
+        this.min_5000 = min_5000;
+        this.sek_5000 = sek_5000;
+        this.watt_2000_m = watt_2000_m;
+        this.min_2000 = min_2000;
+        this.sek_2000 = sek_2000;
+        this.prosent_ligg_ro = prosent_ligg_ro;
+        this.kilo_ligg_ro = kilo_ligg_ro;
+        Cm_Sargeant = cm_Sargeant;
+    }
+    //JuniorB
+    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_2000_m, float sek_3000_m, String min_3000_m, String min_2000, String sek_2000, int antall_Kr_hev, float cm_Sargeant) {
+        this.uID = uID;
+        this.år = år;
+        this.uke = uke;
+        this.klasseID = klasseID;
+        this.watt_60 = watt_60;
+        this.bevegelighet = bevegelighet;
+        this.watt_2000_m = watt_2000_m;
+        this.sek_3000_m = sek_3000_m;
+        this.min_3000_m = min_3000_m;
+        this.min_2000 = min_2000;
+        this.sek_2000 = sek_2000;
+        this.antall_Kr_hev = antall_Kr_hev;
+        Cm_Sargeant = cm_Sargeant;
+    }
+    //JuniorC
+    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float cm_Sargeant, int antall_Kr_hev, String _3000_løp) {
+        this.uID = uID;
+        this.år = år;
+        this.uke = uke;
+        this.klasseID = klasseID;
+        this.watt_60 = watt_60;
+        this.bevegelighet = bevegelighet;
+        Cm_Sargeant = cm_Sargeant;
+        this.antall_Kr_hev = antall_Kr_hev;
+        this._3000_løp = _3000_løp;
+    }
 
     public Testresultati(int uID) {
         this.uID = uID;
     }
 
    public Testresultati(){}
+
 
 
     public String getFornavn() {
