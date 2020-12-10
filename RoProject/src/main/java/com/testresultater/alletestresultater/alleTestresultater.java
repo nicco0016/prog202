@@ -1,6 +1,7 @@
 package com.testresultater.alletestresultater;
 
 
+import com.dbTOOL;
 import com.testresultater.alletestresultater.objekter.Testresultati;
 import com.testresultater.alletestresultater.objekter.testresultat;
 import com.trener.Trener;
@@ -14,20 +15,20 @@ public class alleTestresultater {
     private Connection connection;
     private alleresultatParameter alleresparam;
 
-    public Connection createConnection(){
+    /*public Connection createConnection(){
         try {
             this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Roprosjekt?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "adminroot");
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return this.connection;
-    }
+    }*/
 
 
     public void insertTestresultat(Testresultati testresparam)  {
         try {
             String query = "insert into testresultater values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, testresparam.getuID());
             statement.setInt(2, testresparam.getÅr());
@@ -61,7 +62,7 @@ public class alleTestresultater {
     public void insertTestresultat_mid(Testresultati testresparam)  {
         try {
             String query = "insert into testresultater_mid values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, testresparam.getuID());
             statement.setInt(2, testresparam.getÅr());
@@ -96,7 +97,7 @@ public class alleTestresultater {
         Testresultati testres = null;
         try {
             String query = "SELECT klasseID FROM Roprosjekt.utover  where uID = ?";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, param.getuID());
             ResultSet rs = preparedStatement.executeQuery();
@@ -121,7 +122,7 @@ public class alleTestresultater {
 
         try {
             String query1 = "SELECT år, uke, klasseID FROM testresultater_avsla WHERE uID = ?";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query1);
             preparedStatement.setInt(1, param.getuID());
             ResultSet rs = preparedStatement.executeQuery();
@@ -142,7 +143,7 @@ public class alleTestresultater {
     public void insertTestresultat_endret(Testresultati testresparam)  {
         try {
             String query2 = "insert into testresultater_mid values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query2);
             statement.setInt(1, testresparam.getuID());
             statement.setInt(2, testresparam.getÅr());
@@ -213,7 +214,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
                     "join utover utover\n" +
                     "on testresultater.uID = utover.uID\n" +
                     "where år = ? and uke = ? and klasseType = ? order by score desc ";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, testres.getÅr());
             preparedStatement.setInt(2, testres.getUke());
@@ -289,7 +290,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
                     "join utover utover\n" +
                     "on testresultater.uID = utover.uID\n" +
                     "where klasseType = ? order by score desc ";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, testres.getKlasseID());
             ResultSet rs = preparedStatement.executeQuery();
@@ -351,7 +352,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
                    "join roKlasse r\n" +
                    "\ton t.klasseID = r.klasseID\n" +
                    "where t.uID = ? ";
-           Connection connection = createConnection();
+           Connection connection = dbTOOL.createConnection();
            PreparedStatement preparedStatement = connection.prepareStatement(query);
            preparedStatement.setInt(1, param.getuID());
            ResultSet rs = preparedStatement.executeQuery();
@@ -381,7 +382,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
         try {
             //String query = "insert into testresultater_mid values(?)";
             String query = "insert into testresultater(select * from testresultater_mid where uID = ?)";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, testresparam.getuID());
             statement.execute();
@@ -397,7 +398,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
         try {
             //String query = "insert into testresultater_mid values(?)";
             String query = "delete from testresultater_mid where uID = ?";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, testresparam.getuID());
             statement.execute();
@@ -413,7 +414,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
         try {
             //String query = "insert into testresultater_mid values(?)";
             String query = "delete from testresultater_avsla where uID = ?";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, testresparam.getuID());
             statement.execute();
@@ -429,7 +430,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
         try {
             //String query = "insert into testresultater_mid values(?)";
             String query = "insert into testresultater_avsla(select * from testresultater_mid where uID = ?)";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, testresparam.getuID());
             statement.execute();
@@ -479,7 +480,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
                     "join utover utover\n" +
                     "on testresultater.uID = utover.uID\n" +
                     "where klasseType = ? order by score desc ";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, testres.getKlasseID());
             ResultSet rs = preparedStatement.executeQuery();
@@ -526,7 +527,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
                     "WHERE t.klasseID = ? \n" +
                     "ORDER by score desc\n" +
                     "limit 10;";
-            Connection connection = createConnection();
+            Connection connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1,testres.getuID());
             ResultSet rs = preparedStatement.executeQuery();
@@ -574,7 +575,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
                         "INNER JOIN roKlasse r USING (klasseID)\n" +
                         "INNER JOIN utover u USING(uID)\n" +
                         "WHERE uID = ?";
-                Connection connection = createConnection();
+                Connection connection = dbTOOL.createConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(query);
                 preparedStatement.setInt(1,testres.getuID());
                 ResultSet rs = preparedStatement.executeQuery();
