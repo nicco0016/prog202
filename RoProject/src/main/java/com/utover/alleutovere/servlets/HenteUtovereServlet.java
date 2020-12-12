@@ -14,10 +14,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "v2utoverServlet", urlPatterns = {"/v2utoverServlet", "/alleutovere", "/hentUtover1", "/klubbUtovere" })
-public class v2utoverServlet extends HttpServlet {
+@WebServlet(name = "v2utoverServlet", urlPatterns = {"/v2utoverServlet", "/alleUtovereIKlubben", "/hentUtover1", "/klubbUtovere" })
+public class HenteUtovereServlet extends HttpServlet {
 
-      private String roklubb;
+    private String roklubb;
 
 
 
@@ -39,7 +39,7 @@ public class v2utoverServlet extends HttpServlet {
 
         try {
             switch (action) {
-                case "/alleutovere":
+                case "/alleUtovereIKlubben":
                     utover_Listalleutovere(request, response);
                     break;
                 case "/klubbUtovere":
@@ -58,12 +58,12 @@ public class v2utoverServlet extends HttpServlet {
 
     private void utover_Listalleutovere(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
 
-            Utover utover = new Utover(roklubb);
-            alleUtovere alleutovere = new alleUtovere();
-            List<Utover> listUtover = alleutovere.listOppAlleUtovere(utover);
-            request.setAttribute("listUtovere", listUtover);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("utover_utovere_i_klubben.jsp");
-            dispatcher.forward(request, response);
+        Utover utover = new Utover(roklubb);
+        alleUtovere alleutovere = new alleUtovere();
+        List<Utover> listUtover = alleutovere.listOppAlleUtovere(utover);
+        request.setAttribute("listUtovere", listUtover);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("utover_utovere_i_klubben.jsp");
+        dispatcher.forward(request, response);
 
     }
 

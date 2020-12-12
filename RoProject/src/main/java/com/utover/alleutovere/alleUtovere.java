@@ -1,6 +1,7 @@
 package com.utover.alleutovere;
 
 import com.dbTOOL;
+import com.testresultater.alletestresultater.objekter.Testresultati;
 import com.utover.alleutovere.objekter.Utover;
 import com.utover.alleutovere.objekter.utoveri;
 
@@ -140,9 +141,6 @@ public class alleUtovere {
                 e.printStackTrace();
             }
 
-
-
-
         return utover;
 
     }
@@ -167,6 +165,30 @@ public class alleUtovere {
         }
 
     }
+
+    public Testresultati getKlasseID (Testresultati param) {
+        Testresultati testres = null;
+        try {
+            String query = "SELECT klasseID FROM Roprosjekt.utover  where uID = ?";
+            connection = dbTOOL.createConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, param.getuID());
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()){
+                Integer klasseID = (rs.getInt("klasseID"));
+                testres = new Testresultati();
+                testres.setKlasseID(klasseID);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return testres;
+    }
+
+
 
     public void destroy () {
         try {

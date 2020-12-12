@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet(name = "getallUIDServlet", urlPatterns = {"/getuiddropdown"})
-public class getallUIDServlet extends HttpServlet {
+public class HentUtøverNavnInnrapporteringServlet extends HttpServlet {
     private int klubbid;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -32,7 +32,6 @@ public class getallUIDServlet extends HttpServlet {
             klubbid = klubbID;
         }
 
-
         String action = request.getServletPath();
 
         switch (action) {
@@ -43,11 +42,8 @@ public class getallUIDServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 break;
-
         }
-
     }
-
     private void ListgetallUID(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         Trener trener = new Trener(klubbid);
         getUID getuid = new getUID();

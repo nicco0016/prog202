@@ -18,13 +18,7 @@ import java.util.List;
 @WebServlet(name = "TestresultaterAvslagServlet", urlPatterns = {"/testresavslag"})
 public class TestresultaterAvslagServlet extends HttpServlet {
 
-
-
-
-
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

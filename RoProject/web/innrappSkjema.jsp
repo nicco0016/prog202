@@ -1062,7 +1062,7 @@
                 </select>
             </td>
             <td>
-                <select class="2select" name="3000løpMin">
+                <select class="2select" name="3000lopMin">
                     <option selected disabled value="">min</option>
                     <option value="00">00</option>
                     <option value="01">01</option>
@@ -1125,7 +1125,7 @@
                     <option value="58">58</option>
                     <option value="59">59</option>
                 </select>
-                <select class="2select" name="3000løpSek">
+                <select class="2select" name="3000lopSek">
                     <option selected disabled value="">sek</option>
                     <option value="00">00</option>
                     <option value="01">01</option>

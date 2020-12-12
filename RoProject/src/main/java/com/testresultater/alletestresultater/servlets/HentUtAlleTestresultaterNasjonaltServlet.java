@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @WebServlet(name = "alleTestresultaterServlet", urlPatterns = {"/parameter"})
-public class GetalleTestresultaterServlet extends HttpServlet {
+public class HentUtAlleTestresultaterNasjonaltServlet extends HttpServlet {
 
 
 

@@ -46,14 +46,12 @@ public class innloggingServlet extends HttpServlet {
 
         try {
             switch (action) {
-                case "/hentTrener":
+                case "/hentTrener": //Henter Trener
                     hentTrener(request, response);
                     break;
-                case "/hentUtover":
+                case "/hentUtover": //Henter Utøver
                     hentUtover(request, response);
                     break;
-
-
             }
 
         } catch (Exception e) {

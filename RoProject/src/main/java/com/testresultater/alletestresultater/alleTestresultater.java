@@ -93,31 +93,6 @@ public class alleTestresultater {
         }
     }
 
-    public Testresultati getKlasseID (Testresultati param) {
-        Testresultati testres = null;
-        try {
-            String query = "SELECT klasseID FROM Roprosjekt.utover  where uID = ?";
-            connection = dbTOOL.createConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, param.getuID());
-            ResultSet rs = preparedStatement.executeQuery();
-
-            while(rs.next()){
-                Integer klasseID = (rs.getInt("klasseID"));
-                testres = new Testresultati();
-                testres.setKlasseID(klasseID);
-
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return testres;
-    }
-
-
-
-
 
 public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter) throws SQLException {
         List<testresultat> testresultater = new ArrayList<>();

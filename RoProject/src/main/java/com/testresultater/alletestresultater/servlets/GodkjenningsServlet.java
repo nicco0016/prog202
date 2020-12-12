@@ -14,12 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "TestresultatInsertOFCServlet", urlPatterns = {"/godkjent", "/ikkegodkjent"})
-public class TestresultatInsertOFCServlet extends HttpServlet {
+public class GodkjenningsServlet extends HttpServlet {
 private String klasseID;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
 
     }
 
@@ -45,9 +43,7 @@ private String klasseID;
         verifisering.insertTestresultat_ofc(testresinsert);
         testresultat testresdelete = new testresultat(utoverID);
         verifisering.deleteTestresultat_mid(testresdelete);
-
     }
-
     public void avsla(HttpServletRequest request, HttpServletResponse response){
         resultatverifisering verifisering = new resultatverifisering();
         int utoverID = Integer.parseInt(request.getParameter("id"));

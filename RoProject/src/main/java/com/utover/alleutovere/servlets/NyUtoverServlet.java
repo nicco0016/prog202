@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.*;
 
 @WebServlet( name = "UtoverInsertServlet", urlPatterns = {"/LeggTil"})
-public class UtoverInsertServlet extends HttpServlet {
+public class NyUtoverServlet extends HttpServlet {
     private Connection connection;
     private alleUtovere alleutovere;
     private int klubbID;
