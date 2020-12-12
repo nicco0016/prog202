@@ -55,7 +55,7 @@ public class alleUtovere {
     public List <Utover> listOppAlleUtovere(Utover param){
         List<Utover> utovere = new ArrayList<>();
         try {
-            Connection connection = dbTOOL.createConnection();
+            connection = dbTOOL.createConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(QUERY1);
             preparedStatement.setString(1, param.getKlubbID() );
             ResultSet rs = preparedStatement.executeQuery();
@@ -80,7 +80,7 @@ public class alleUtovere {
         try {
             int maxno = 0;
             String query1 = "SELECT max(uID)from utover";
-            Connection connection = dbTOOL.createConnection();
+            connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query1);
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
@@ -88,8 +88,8 @@ public class alleUtovere {
                 maxno = sisteutover;
             }
             String query2 = "INSERT INTO utover VALUES(?,?,?,?,?,?,?)";
-            Connection connection2 = dbTOOL.createConnection();
-            PreparedStatement preparedStatement = connection2.prepareStatement(query2);
+            connection = dbTOOL.createConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query2);
             int Maxno = maxno + 1;
             preparedStatement.setInt(1, Maxno);
             preparedStatement.setInt(2, utoverparam.getKjonnID());
@@ -148,8 +148,8 @@ public class alleUtovere {
     public void endreutover(utoveri param) {
         try {
             String query = "update utover set klasseID = ?, fornavn = ?, etternavn = ? where uID = ?";
-            Connection connection2 = dbTOOL.createConnection();
-            PreparedStatement preparedStatement = connection2.prepareStatement(query);
+            connection = dbTOOL.createConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, param.getKlasseID());
             preparedStatement.setString(2, param.getFornavn());
             preparedStatement.setString(3, param.getEtternavn());

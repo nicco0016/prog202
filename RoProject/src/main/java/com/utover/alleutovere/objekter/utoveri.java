@@ -35,6 +35,17 @@ public class utoveri {
         this.etternavn = etternavn;
     }
 
+    public utoveri(int uID, String fornavn, String etternavn) {
+        this.uID = uID;
+        this.fornavn = fornavn;
+        this.etternavn = etternavn;
+    }
+
+
+    public utoveri(int klubbID) {
+        this.klubbID = klubbID;
+    }
+
     public int getuID() {
         return uID;
     }

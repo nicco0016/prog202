@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "UtoverresultatServlet", urlPatterns = {"/seresultater", "/seEnAnnenSideResultater"})
-public class UtoverresultatServlet extends HttpServlet {
+@WebServlet(name = "UtoverresultatServlet", urlPatterns = {"/seEgneResultater", "/seEnAnnenSideResultater"})
+public class utoverSeResultaterServlet extends HttpServlet {
     private int uid;
 
 
@@ -30,7 +30,7 @@ public class UtoverresultatServlet extends HttpServlet {
         String action = request.getServletPath();
         try{
             switch (action){
-                case "/seresultater":
+                case "/seEgneResultater":
                     mineTestresultater(request, response);
                     break;
                 case "/seEnAnnenSideResultater":

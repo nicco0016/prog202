@@ -16,7 +16,6 @@ public class resultatverifisering {
 
     public void insertTestresultat_ofc(testresultat testresparam)  {
         try {
-            //String query = "insert into testresultater_mid values(?)";
             String query = "insert into testresultater(select * from testresultater_mid where uID = ?)";
             connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
@@ -49,7 +48,6 @@ public class resultatverifisering {
 
     public void deleteTestresultat_avsla(testresultat testresparam)  {
         try {
-            //String query = "insert into testresultater_mid values(?)";
             String query = "delete from testresultater_avsla where uID = ?";
             connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
@@ -65,45 +63,10 @@ public class resultatverifisering {
 
     public void insertTestresultat_avsla(testresultat testresparam)  {
         try {
-            //String query = "insert into testresultater_mid values(?)";
             String query = "insert into testresultater_avsla(select * from testresultater_mid where uID = ?)";
             connection = dbTOOL.createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, testresparam.getuID());
-            statement.execute();
-
-        }catch (SQLException e){
-            e.printStackTrace();
-        }finally {
-            destroy();
-        }
-    }
-
-    public void insertTestresultat_mid(Testresultati testresparam)  {
-        try {
-            String query = "insert into testresultater_mid values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            connection = dbTOOL.createConnection();
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, testresparam.getuID());
-            statement.setInt(2, testresparam.getÅr());
-            statement.setInt(3, testresparam.getUke());
-            statement.setInt(4, testresparam.getKlasseID());
-            statement.setFloat(5, testresparam.getWatt_60());
-            statement.setInt(6, testresparam.getBevegelighet());
-            statement.setFloat(7, testresparam.getWatt_2000_m());
-            statement.setString(8, testresparam.getTid_5000_m());
-            statement.setFloat(9, testresparam.getWatt_2000_m());
-            statement.setString(10, testresparam.getTid_2000_m());
-            statement.setFloat(11, testresparam.getProsent_ligg_ro());
-            statement.setFloat(12, testresparam.getKilo_ligg_ro());
-            statement.setFloat(13, testresparam.getProsent_knebøy());
-            statement.setFloat(14, testresparam.getKilo_knebøy());
-            statement.setFloat(15, testresparam.getCm_Sargeant());
-            statement.setString(16, testresparam.getSek_3000_m());
-            statement.setString(17, testresparam.getMin_3000_m());
-            statement.setInt(18, testresparam.getAntall_Kr_hev());
-            statement.setString(19, testresparam.get_3000_løp());
-            statement.setFloat(20, testresparam.getScore());
             statement.execute();
 
         }catch (SQLException e){

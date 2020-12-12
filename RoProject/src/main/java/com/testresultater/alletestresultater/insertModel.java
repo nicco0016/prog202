@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class insertModel {
     private Connection connection;
-    private alleresultatParameter alleresparam;
+
 
 
     public void insertTestresultat_mid_senior(Testresultati param){
@@ -39,6 +39,8 @@ public class insertModel {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
 
     }
@@ -66,6 +68,8 @@ public class insertModel {
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
     }
 
@@ -91,6 +95,8 @@ public class insertModel {
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
     }
 
@@ -114,8 +120,18 @@ public class insertModel {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            destroy();
         }
 
+    }
+
+    public void destroy () {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     }

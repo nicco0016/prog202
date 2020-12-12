@@ -54,7 +54,7 @@
 
                 <select name="utoverID" >
                     <c:forEach var = "id" items = "${senior}">
-                    <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                    <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
 
@@ -394,7 +394,7 @@
             <td>
                 <select class="1select" name="utoverID">
                     <c:forEach var = "id" items = "${jA}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                        <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -722,7 +722,7 @@
             <td>
                 <select class="1select" name="utoverID">
                     <c:forEach var = "id" items = "${jB}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                        <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -1047,7 +1047,7 @@
             <td>
                 <select class="1select" name="utoverID">
                     <c:forEach var = "id" items = "${jC}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                        <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
             </td>

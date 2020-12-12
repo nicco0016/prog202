@@ -3,6 +3,8 @@ package com.testresultater.alletestresultater.servlets;
 import com.testresultater.alletestresultater.alleTestresultater;
 import com.trener.Trener;
 import com.utover.alleutovere.getUID;
+import com.utover.alleutovere.objekter.Utover;
+import com.utover.alleutovere.objekter.utoveri;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,12 +47,12 @@ public class HentUtøverNavnInnrapporteringServlet extends HttpServlet {
         }
     }
     private void ListgetallUID(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        Trener trener = new Trener(klubbid);
+        utoveri utover = new utoveri(klubbid);
         getUID getuid = new getUID();
-        List<Trener>  senior = getuid.getallUIDSenior(trener);
-        List<Trener>  jA = getuid.getallUIDJuniorA(trener);
-        List<Trener>  jB = getuid.getallUIDJuniorB(trener);
-        List<Trener>  jC = getuid.getallUIDJuniorC(trener);
+        List<utoveri>  senior = getuid.getallUIDSenior(utover);
+        List<utoveri>  jA = getuid.getallUIDJuniorA(utover);
+        List<utoveri>  jB = getuid.getallUIDJuniorB(utover);
+        List<utoveri>  jC = getuid.getallUIDJuniorC(utover);
         request.setAttribute("senior", senior);
         request.setAttribute("jA", jA);
         request.setAttribute("jB", jB);
