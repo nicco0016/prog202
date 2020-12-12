@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 29/10/2020
-  Time: 15:06
+  Date: 22/10/2020
+  Time: 13:13
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
@@ -23,8 +23,9 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="HentUtTestresultater.jsp">Testresultater</a></li>
-            <li><a href="#">Utøvere</a></li>
+            <li><a href="<%=request.getContextPath()%>/sammenligbeste">Sammenlign mot klassens beste</a></li>
+            <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${roklubb}">Utøvere i ${roklubb} roklubb</a></td> <!-- Sender til v2utoverServlet -->
+            <li><a href="Utover.jsp">Utøvere</a></li>
         </ul>
     </div>
 </nav>
@@ -32,50 +33,29 @@
 <section id="showcase">
 
     <table>
-        <caption>Liste over alle testresultater</caption>
-
-
+        <h2>Liste over mine testresultater fra Norges Roforbund</h2>
         <br>
-
-
-
-
         <thead>
         <tr>
-
-            <th>score</th>
-            <th>UtoverID</th>
-            <th>fornavn</th>
-            <th>etternavn</th>
-            <th>år</th>
-            <th>uke</th>
-            <th>klasseID</th>
-            <th>watt_60</th>
-            <th>bevegelighet</th>
-            <th>watt_5000_m</th>
-            <th>tid_5000_m</th>
-            <th>watt_2000_m</th>
-            <th>tid_2000_m</th>
-            <th>prosent_ligg_ro</th>
-            <th>kilo_ligg_ro</th>
-            <th>Cm_Sargeant</th>
-            <th>Handling</th>
-
+            <th>År</th>
+            <th>Uke</th>
+            <th>Score</th>
+            <th>Roklasse</th>
+            <th>Watt_60</th>
+            <th>Bevegelighet</th>
+            <th>Watt_5000_m</th>
+            <th>Tid_5000_m</th>
+            <th>Watt_2000_m</th>
+            <th>Tid_2000_m</th>
+            <th>Prosent_ligg_ro</th>
+            <th>Kilo_ligg_ro</th>
         </tr>
         </thead>
-
-
-
-        <c:forEach var = "testresultat" items = "${listTestresultater}">
-
+        <c:forEach var = "testresultat" items = "${listtestresultat}">
             <tr>
-
-                <td>${testresultat.score}</td>
-                <td>${testresultat.uID}</td>
-                <td>${testresultat.fornavn}</td>
-                <td>${testresultat.etternavn}</td>
                 <td>${testresultat.år}</td>
                 <td>${testresultat.uke}</td>
+                <td>${testresultat.score}</td>
                 <td>${testresultat.klasseID}</td>
                 <td>${testresultat.watt_60}</td>
                 <td>${testresultat.bevegelighet}</td>
@@ -85,13 +65,7 @@
                 <td>${testresultat.tid_2000_m}</td>
                 <td>${testresultat.prosent_ligg_ro}</td>
                 <td>${testresultat.kilo_ligg_ro}</td>
-                <td>${testresultat.cm_Sargeant}</td>
-                <td><a href="<%=request.getContextPath()%>/endreTestresultat?id=${testresultat.uID}">Endre</a></td>
-
             </tr>
-
-
-
         </c:forEach>
 
     </table>
@@ -108,7 +82,7 @@
 </div>
 
 <footer id="main-footer">
-    <p>Copuritgh my website. </p>
+    <p>Copuritgh my website. Ingen kødder!</p>
 </footer>
 </body>
 </html>

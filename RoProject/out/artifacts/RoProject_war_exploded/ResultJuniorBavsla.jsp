@@ -86,7 +86,7 @@
                 <td>${testresultat.tid_2000_m}</td>
                 <td>${testresultat.antall_Kr_hev}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-                <td><a href="<%=request.getContextPath()%>/endre?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
+                <td><a href="<%=request.getContextPath()%>/endreTestresultat?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
 
 
 

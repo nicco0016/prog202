@@ -101,8 +101,9 @@ public class InsertServlet extends HttpServlet {
         int utoverID = Integer.parseInt(request.getParameter("utoverID"));
         float watt_60 = Float.parseFloat(request.getParameter("watt_60"));
         int bevegelighet = Integer.parseInt(request.getParameter("bevegelighet"));
+        int totalSek_3000_m = Integer.parseInt(request.getParameter("sek_3000"));
         String min_3000_m = request.getParameter("3000Min");
-        float sek_3000_m = Float.parseFloat(request.getParameter("sek_3000"));
+        String sek_3000_m = (request.getParameter("3000Sek"));
         float watt_2000_m = Float.parseFloat(request.getParameter("watt_2000"));
         String min_2000 = request.getParameter("2000Min");
         String sek_2000 = request.getParameter("2000Sek");
@@ -113,7 +114,7 @@ public class InsertServlet extends HttpServlet {
         param = alletestresultater.getKlasseID(param);
         int klasseID = param.getKlasseID();
         insertModel insert = new insertModel();
-        Testresultati nyttTestresultat = new Testresultati(utoverID, år, uke, klasseID, watt_60, bevegelighet, watt_2000_m, sek_3000_m, min_3000_m, min_2000, sek_2000, antall_Kr_hev, sargeant);
+        Testresultati nyttTestresultat = new Testresultati(utoverID, år, uke, klasseID, watt_60, bevegelighet, watt_2000_m, totalSek_3000_m, sek_3000_m, min_3000_m,  min_2000, sek_2000, antall_Kr_hev, sargeant);
         insert.insertTestresultat_mid_jB(nyttTestresultat);
     }
 

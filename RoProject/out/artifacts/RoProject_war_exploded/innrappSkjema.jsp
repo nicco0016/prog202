@@ -689,7 +689,7 @@
     <fieldset>
         <legend></legend>
         <label for="år">År:</label>
-        <select class="select-css" name="år">
+        <select class="select-css" name="ar">
             <option selected disabled value="">Velg</option>
             <option value="2020">2020</option>
             <option value="2021">2021</option>
@@ -1018,7 +1018,7 @@
         <fieldset>
             <legend></legend>
             <label for="år">År:</label>
-            <select class="select-css" name="år">
+            <select class="select-css" name="ar">
                 <option selected disabled value="">Velg</option>
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>

@@ -1,10 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: nicolaibjorntvedt
-  Date: 22/10/2020
-  Time: 13:13
+  Date: 11/12/2020
+  Time: 15:01
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="com.testresultater.alletestresultater.alleTestresultater"%>
@@ -23,10 +24,7 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="<%=request.getContextPath()%>/sammenligbeste">Sammenlign mot klassens beste</a></li>
-            <td><a href="<%=request.getContextPath()%>/testresultater?id=${utoverid}">Mine testresultater</a></td> <!--Sender til UtoverresultServlet-->
-            <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${roklubb}">Utøvere i ${roklubb} roklubb</a></td> <!-- Sender til v2utoverServlet -->
-            <li><a href="Utover.jsp">Utøvere</a></li>
+
         </ul>
     </div>
 </nav>
@@ -87,3 +85,4 @@
 </footer>
 </body>
 </html>
+

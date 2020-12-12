@@ -2,6 +2,7 @@ package com.testresultater.alletestresultater.servlets;
 
 import com.testresultater.alletestresultater.alleTestresultater;
 import com.testresultater.alletestresultater.objekter.testresultat;
+import com.testresultater.alletestresultater.resultatverifisering;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,8 +41,8 @@ public class alleTestresultaterMidServlet extends HttpServlet {
         List<testresultat> listTestresultat = null;
         try {
 
-            alleTestresultater alletestresultater = new alleTestresultater();
-            listTestresultat = alletestresultater.listOppAlleTestresultater_mid(testresparam);
+            resultatverifisering verifisering = new resultatverifisering();
+            listTestresultat = verifisering.listOppAlleTestresultater_mid(testresparam);
         } catch (SQLException e) {
             e.printStackTrace();
         }

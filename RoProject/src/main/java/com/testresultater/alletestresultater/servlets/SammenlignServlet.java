@@ -15,15 +15,12 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "SammenlignServlet", urlPatterns = {"/sammenlign", "/sammenligbeste"})
+@WebServlet(name = "SammenlignServlet", urlPatterns = {"/sammenlign2utovere", "/sammenligbeste"})
 public class SammenlignServlet extends HttpServlet {
     private int uid;
     private int uid2;
     private int Klasse;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -46,7 +43,7 @@ public class SammenlignServlet extends HttpServlet {
         String action = request.getServletPath();
         try {
             switch (action) {
-                case "/sammenlign":
+                case "/sammenlign2utovere":
                     sammenlign2utovere(request, response);
                     break;
                 case "/sammenligbeste":

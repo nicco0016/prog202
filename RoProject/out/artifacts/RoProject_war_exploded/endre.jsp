@@ -29,7 +29,7 @@
 
 <section id="showcase">
 
-    <form action="endre" method="POST"> <!-- Sender til TestresultatInsertServlet-->
+    <form action="oppdaterTestresultat" method="GET"> <!-- Sender til TestresultatInsertServlet-->
         <p>
             Watt_60 <input type="number" name="watt_60" required />
         </p>

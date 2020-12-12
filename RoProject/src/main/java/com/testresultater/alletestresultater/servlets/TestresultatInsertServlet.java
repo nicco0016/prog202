@@ -33,7 +33,7 @@ public class TestresultatInsertServlet extends HttpServlet {
         float prosent_knebøy = Float.parseFloat(request.getParameter("prosent_kneboy"));
         float kilo_knebøy = Float.parseFloat(request.getParameter("kilo_kneboy"));
         float cm_Sargeant = Float.parseFloat(request.getParameter("Cm_Sargeant"));
-        float sek_3000_m = Float.parseFloat(request.getParameter("sek_3000_m"));
+        String sek_3000_m = (request.getParameter("sek_3000_m"));
         String min_3000_m = request.getParameter("min_3000_m");
         int antall_Kr_hev = Integer.parseInt(request.getParameter("antall_Kr_hev"));
         String _3000_løp = request.getParameter("_3000_lop");

@@ -78,7 +78,7 @@ public class insertModel {
 
     public void insertTestresultat_mid_jB(Testresultati param) {
         try {
-            String query = "INSERT INTO testresultater_mid (uID, år, uke, klasseID, watt_60, bevegelighet, min_3000_m, sek_3000_m,  watt_2000_m, tid_2000_m, antall_Kr_Hev, cm_Sargeant) values(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO testresultater_mid (uID, år, uke, klasseID, watt_60, bevegelighet, sek_3000_m, min_3000_m, watt_2000_m, tid_2000_m, antall_Kr_Hev, cm_Sargeant) values(?,?,?,?,?,?,?,?,?,?,?,?)";
             Connection connection = createConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, param.getuID());
@@ -87,7 +87,7 @@ public class insertModel {
             statement.setInt(4, param.getKlasseID());
             statement.setFloat(5, param.getWatt_60());
             statement.setInt(6, param.getBevegelighet());
-            statement.setFloat(7, param.getSek_3000_m());
+            statement.setFloat(7, param.getTotalSek_3000_m());
             String tid3000 = param.getMin_3000_m() + "." + param.getSek_3000_m();
             statement.setString(8, tid3000);
             statement.setFloat(9, param.getWatt_2000_m());

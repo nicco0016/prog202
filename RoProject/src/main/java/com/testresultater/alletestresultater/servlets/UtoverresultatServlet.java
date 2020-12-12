@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "UtoverresultatServlet", urlPatterns = {"/testresultater", "/seresultater"})
+@WebServlet(name = "UtoverresultatServlet", urlPatterns = {"/testresultater", "/seEnAnnenSideEesultater"})
 public class UtoverresultatServlet extends HttpServlet {
     private int uid;
 
@@ -31,10 +31,10 @@ public class UtoverresultatServlet extends HttpServlet {
         try{
             switch (action){
                 case "/testresultater":
-                    listOppResultater(request, response);
+                    mineTestresultater(request, response);
                     break;
-                case "/seresultater":
-                    listUtoverResultater(request, response);
+                case "/seEnAnnenSideEesultater":
+                    seAnnenUtover(request, response);
                     break;
 
             }
@@ -43,21 +43,21 @@ public class UtoverresultatServlet extends HttpServlet {
         }
     }
 
-    private void listUtoverResultater(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void mineTestresultater(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         testresultat testres = new testresultat(uid);
         alleTestresultater alletestresultater = new alleTestresultater();
         List<testresultat> listtestresultat = alletestresultater.listOppEnUtover(testres);
         request.setAttribute("listtestresultat", listtestresultat);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("HentUtTestresultaterUtover.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("utover_mineTestresultater.jsp");
         dispatcher.forward(request, response);
     }
 
-    public void listOppResultater(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void seAnnenUtover(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         testresultat testres = new testresultat(uid);
         alleTestresultater alletestresultater = new alleTestresultater();
         List<testresultat> listtestresultat = alletestresultater.listOppEnUtover(testres);
         request.setAttribute("listtestresultat", listtestresultat);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("HentUtTestresultaterUtover.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("utover_seEnAnnenTestresultater.jsp");
         dispatcher.forward(request, response);
     }
 }

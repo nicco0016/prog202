@@ -62,7 +62,7 @@ public class v2utoverServlet extends HttpServlet {
             alleUtovere alleutovere = new alleUtovere();
             List<Utover> listUtover = alleutovere.listOppAlleUtovere(utover);
             request.setAttribute("listUtovere", listUtover);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("utover_MineUtovereTrener.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("utover_utovere_i_klubben.jsp");
             dispatcher.forward(request, response);
 
     }

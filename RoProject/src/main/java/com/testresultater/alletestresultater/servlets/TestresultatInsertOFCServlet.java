@@ -2,7 +2,9 @@ package com.testresultater.alletestresultater.servlets;
 
 import com.testresultater.alletestresultater.alleTestresultater;
 import com.testresultater.alletestresultater.objekter.testresultat;
+import com.testresultater.alletestresultater.resultatverifisering;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -36,23 +38,23 @@ private String klasseID;
         }
     }
 
-    public void godkjenn(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        alleTestresultater alletestresultater = new alleTestresultater();
+    public void godkjenn(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        resultatverifisering verifisering = new resultatverifisering();
         int utoverID = Integer.parseInt(request.getParameter("id"));
         testresultat testresinsert = new testresultat(utoverID);
-        alletestresultater.insertTestresultat_ofc(testresinsert);
+        verifisering.insertTestresultat_ofc(testresinsert);
         testresultat testresdelete = new testresultat(utoverID);
-        alletestresultater.deleteTestresultat_mid(testresdelete);
+        verifisering.deleteTestresultat_mid(testresdelete);
 
     }
 
     public void avsla(HttpServletRequest request, HttpServletResponse response){
-        alleTestresultater alletestresultater = new alleTestresultater();
+        resultatverifisering verifisering = new resultatverifisering();
         int utoverID = Integer.parseInt(request.getParameter("id"));
         testresultat testresinsert = new testresultat(utoverID);
-        alletestresultater.insertTestresultat_avsla(testresinsert);
+        verifisering.insertTestresultat_avsla(testresinsert);
         testresultat testresdelete = new testresultat(utoverID);
-        alletestresultater.deleteTestresultat_mid(testresdelete);
+        verifisering.deleteTestresultat_mid(testresdelete);
     }
 }
 

@@ -20,7 +20,8 @@ public class Testresultati {
         private float prosent_knebøy;
         private float kilo_knebøy;
         private float Cm_Sargeant;
-        private float sek_3000_m;
+        private int totalSek_3000_m;
+        private String sek_3000_m;
         private String min_3000_m;
         private int antall_Kr_hev;
         private String _3000_løp;
@@ -29,7 +30,7 @@ public class Testresultati {
         private String etternavn;
 
 
-    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_5000_m, String tid_5000_m, float watt_2000_m, String tid_2000_m, float prosent_ligg_ro, float kilo_ligg_ro, float prosent_knebøy, float kilo_knebøy, float cm_Sargeant, float sek_3000_m, String min_3000_m, int antall_Kr_hev, String _3000_løp, float score, String fornavn, String etternavn) {
+    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_5000_m, String tid_5000_m, float watt_2000_m, String tid_2000_m, float prosent_ligg_ro, float kilo_ligg_ro, float prosent_knebøy, float kilo_knebøy, float cm_Sargeant, String sek_3000_m, String min_3000_m, int antall_Kr_hev, String _3000_løp, float score, String fornavn, String etternavn) {
         this.uID = uID;
         this.år = år;
         this.uke = uke;
@@ -54,7 +55,7 @@ public class Testresultati {
         this.etternavn = etternavn;
     }
 
-    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_5000_m, String tid_5000_m, float watt_2000_m, String tid_2000_m, float prosent_ligg_ro, float kilo_ligg_ro, float prosent_knebøy, float kilo_knebøy, float cm_Sargeant, float sek_3000_m, String min_3000_m, int antall_Kr_hev, String _3000_løp, float score) {
+    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_5000_m, String tid_5000_m, float watt_2000_m, String tid_2000_m, float prosent_ligg_ro, float kilo_ligg_ro, float prosent_knebøy, float kilo_knebøy, float cm_Sargeant, String sek_3000_m, String min_3000_m, int antall_Kr_hev, String _3000_løp, float score) {
         this.uID = uID;
         this.år = år;
         this.uke = uke;
@@ -122,7 +123,7 @@ public class Testresultati {
         Cm_Sargeant = cm_Sargeant;
     }
     //JuniorB
-    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_2000_m, float sek_3000_m, String min_3000_m, String min_2000, String sek_2000, int antall_Kr_hev, float cm_Sargeant) {
+    public Testresultati(int uID, int år, int uke, int klasseID, float watt_60, int bevegelighet, float watt_2000_m, int totalSek_3000_m ,String sek_3000_m, String min_3000_m, String min_2000, String sek_2000, int antall_Kr_hev, float cm_Sargeant) {
         this.uID = uID;
         this.år = år;
         this.uke = uke;
@@ -130,6 +131,7 @@ public class Testresultati {
         this.watt_60 = watt_60;
         this.bevegelighet = bevegelighet;
         this.watt_2000_m = watt_2000_m;
+        this.totalSek_3000_m = totalSek_3000_m;
         this.sek_3000_m = sek_3000_m;
         this.min_3000_m = min_3000_m;
         this.min_2000 = min_2000;
@@ -156,7 +158,13 @@ public class Testresultati {
 
    public Testresultati(){}
 
+    public int getTotalSek_3000_m() {
+        return totalSek_3000_m;
+    }
 
+    public void setTotalSek_3000_m(int totalSek_3000_m) {
+        this.totalSek_3000_m = totalSek_3000_m;
+    }
 
     public String getFornavn() {
         return fornavn;
@@ -294,11 +302,11 @@ public class Testresultati {
         Cm_Sargeant = cm_Sargeant;
     }
 
-    public float getSek_3000_m() {
+    public String getSek_3000_m() {
         return sek_3000_m;
     }
 
-    public void setSek_3000_m(float sek_3000_m) {
+    public void setSek_3000_m(String sek_3000_m) {
         this.sek_3000_m = sek_3000_m;
     }
 

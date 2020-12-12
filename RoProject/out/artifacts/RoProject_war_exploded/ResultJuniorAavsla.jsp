@@ -86,7 +86,7 @@
                 <td>${testresultat.prosent_ligg_ro}</td>
                 <td>${testresultat.kilo_ligg_ro}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-                <td><a href="<%=request.getContextPath()%>/endre?id=${testresultat.uID}">Endre</a></td>
+                <td><a href="<%=request.getContextPath()%>/endreTestresultat?id=${testresultat.uID}">Endre</a></td>
 
             </tr>
 

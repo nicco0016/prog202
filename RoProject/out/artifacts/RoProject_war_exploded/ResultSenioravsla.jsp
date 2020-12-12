@@ -90,7 +90,7 @@
                 <td>${testresultat.kilo_ligg_ro}</td>
                 <td>${testresultat.prosent_knebøy}</td>
                 <td>${testresultat.kilo_knebøy}</td>
-                <td><a href="<%=request.getContextPath()%>/endre?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
+                <td><a href="<%=request.getContextPath()%>/endreTestresultat?id=<c:out value ='${testresultat.uID}'/>">Endre</a></td>
 
 
 
