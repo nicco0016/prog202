@@ -62,15 +62,34 @@ public class SammenlignServlet extends HttpServlet {
 Denne metoden henter og lager én tabell om utøveren selv og én større tabell med de 10 beste nasjonalt i denne klassen.
  */
     private void sammenligbeste(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        testresultat testres1 = new testresultat(uid);
+        Testresultati testres1 = new Testresultati(uid, Klasse);
         Testresultati testres2 = new Testresultati(Klasse);
         alleTestresultater alletestres = new alleTestresultater();
-        List<testresultat> listsammenlign1 = alletestres.sammenlignutover(testres1);
+        List<testresultat> listsammenlign1 = alletestres.sammenlignUtoverMotKlasse(testres1);
         List<Testresultati> listsammenlign2 = alletestres.sammenlignbeste(testres2);
-        request.setAttribute("listsammenlign1", listsammenlign1);
-        request.setAttribute("listsammenlign2", listsammenlign2);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("sammenlignbeste.jsp");
-        dispatcher.forward(request, response);
+        if (Klasse < 3){
+            request.setAttribute("listsammenlign1", listsammenlign1);
+            request.setAttribute("listsammenlign2", listsammenlign2);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sammenlignBesteSenior.jsp");
+            dispatcher.forward(request, response);
+        }else if(Klasse >2 && Klasse < 5) {
+            request.setAttribute("listsammenlign1", listsammenlign1);
+            request.setAttribute("listsammenlign2", listsammenlign2);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sammenlignBesteJuniorA.jsp");
+            dispatcher.forward(request, response);
+        }else if(Klasse >4 && Klasse < 7) {
+            request.setAttribute("listsammenlign1", listsammenlign1);
+            request.setAttribute("listsammenlign2", listsammenlign2);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sammenlignBesteJuniorB.jsp");
+            dispatcher.forward(request, response);
+        }else if(Klasse >6 && Klasse < 9) {
+            request.setAttribute("listsammenlign1", listsammenlign1);
+            request.setAttribute("listsammenlign2", listsammenlign2);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sammenlignBesteJuniorC.jsp");
+            dispatcher.forward(request, response);
+        }
+
+
     }
 /*
 Denne metoden sammenligner to utøvere opp mot hverandre. Først henter den ut alle testresultatene fra en innloggede

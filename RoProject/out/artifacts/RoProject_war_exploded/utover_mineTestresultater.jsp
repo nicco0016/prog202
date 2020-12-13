@@ -31,29 +31,35 @@
 <section id="showcase">
 
     <table>
-        <h2>Liste over mine testresultater fra Norges Roforbund</h2>
+        <h3>Liste over alle dine testresulater som Senior</h3>
         <br>
+
         <thead>
         <tr>
-            <th>År</th>
-            <th>Uke</th>
-            <th>Score</th>
-            <th>Roklasse</th>
-            <th>Watt_60</th>
-            <th>Bevegelighet</th>
-            <th>Watt_5000_m</th>
-            <th>Tid_5000_m</th>
-            <th>Watt_2000_m</th>
-            <th>Tid_2000_m</th>
-            <th>Prosent_ligg_ro</th>
-            <th>Kilo_ligg_ro</th>
+
+            <th>score</th>
+            <th>år</th>
+            <th>uke</th>
+            <th>klasseID</th>
+            <th>watt_60</th>
+            <th>bevegelighet</th>
+            <th>watt_5000_m</th>
+            <th>tid_5000_m</th>
+            <th>watt_2000_m</th>
+            <th>tid_2000_m</th>
+            <th>prosent_ligg_ro</th>
+            <th>kilo_ligg_ro</th>
+            <th>prosent_knebøy</th>
+            <th>kilo_knebøy</th>
+
         </tr>
         </thead>
-        <c:forEach var = "testresultat" items = "${listtestresultat}">
+        <c:forEach var = "testresultat" items = "${listSeniorResultat}">
+
             <tr>
+                <td>${testresultat.score}</td>
                 <td>${testresultat.år}</td>
                 <td>${testresultat.uke}</td>
-                <td>${testresultat.score}</td>
                 <td>${testresultat.klasseID}</td>
                 <td>${testresultat.watt_60}</td>
                 <td>${testresultat.bevegelighet}</td>
@@ -63,7 +69,145 @@
                 <td>${testresultat.tid_2000_m}</td>
                 <td>${testresultat.prosent_ligg_ro}</td>
                 <td>${testresultat.kilo_ligg_ro}</td>
+                <td>${testresultat.prosent_knebøy}</td>
+                <td>${testresultat.kilo_knebøy}</td>
             </tr>
+
+        </c:forEach>
+
+    </table>
+
+    <table>
+        <h3>Liste over alle  dine testresultater som Junior A</h3>
+
+
+        <br>
+        <thead>
+        <tr>
+
+            <th>score</th>
+            <th>år</th>
+            <th>uke</th>
+            <th>klasseID</th>
+            <th>watt_60</th>
+            <th>bevegelighet</th>
+            <th>watt_5000_m</th>
+            <th>tid_5000_m</th>
+            <th>watt_2000_m</th>
+            <th>tid_2000_m</th>
+            <th>prosent_ligg_ro</th>
+            <th>kilo_ligg_ro</th>
+            <th>Cm_Sargeant</th>
+
+        </tr>
+        </thead>
+
+        <c:forEach var = "testresultat" items = "${listJuniorAResultat}">
+
+            <tr>
+
+                <td>${testresultat.score}</td>
+                <td>${testresultat.år}</td>
+                <td>${testresultat.uke}</td>
+                <td>${testresultat.klasseID}</td>
+                <td>${testresultat.watt_60}</td>
+                <td>${testresultat.bevegelighet}</td>
+                <td>${testresultat.watt_5000_m}</td>
+                <td>${testresultat.tid_5000_m}</td>
+                <td>${testresultat.watt_2000_m}</td>
+                <td>${testresultat.tid_2000_m}</td>
+                <td>${testresultat.prosent_ligg_ro}</td>
+                <td>${testresultat.kilo_ligg_ro}</td>
+                <td>${testresultat.cm_Sargeant}</td>
+
+            </tr>
+        </c:forEach>
+
+    </table>
+
+    <table>
+        <h3>Liste over alle dine testresultater som Junior B</h3>
+
+
+        <br>
+
+        <thead>
+        <tr>
+            <th>score</th>
+            <th>år</th>
+            <th>uke</th>
+            <th>klasseID</th>
+            <th>watt_60</th>
+            <th>bevegelighet</th>
+            <th>sek_3000_m</th>
+            <th>min_3000_m</th>
+            <th>watt_2000_m</th>
+            <th>tid_2000_m</th>
+            <th>antall_Kr_hev</th>
+            <th>Cm_Sargeant</th>
+
+
+        </tr>
+        </thead>
+
+        <c:forEach var = "testresultat" items = "${listJuniorBResultat}">
+
+            <tr>
+                <td>${testresultat.score}</td>
+                <td>${testresultat.år}</td>
+                <td>${testresultat.uke}</td>
+                <td>${testresultat.klasseID}</td>
+                <td>${testresultat.watt_60}</td>
+                <td>${testresultat.bevegelighet}</td>
+                <td>${testresultat.sek_3000_m}</td>
+                <td>${testresultat.min_3000_m}</td>
+                <td>${testresultat.watt_2000_m}</td>
+                <td>${testresultat.tid_2000_m}</td>
+                <td>${testresultat.antall_Kr_hev}</td>
+                <td>${testresultat.cm_Sargeant}</td>
+
+            </tr>
+
+        </c:forEach>
+
+    </table>
+
+    <table>
+        <h3>Liste over alle testresultater</h3>
+
+        <br>
+
+        <thead>
+        <tr>
+
+            <th>år</th>
+            <th>uke</th>
+            <th>klasseID</th>
+            <th>score</th>
+            <th>watt_60</th>
+            <th>bevegelighet</th>
+            <th>_3000_løp</th>
+            <th>antall_Kr_hev</th>
+            <th>Cm_Sargeant</th>
+
+        </tr>
+        </thead>
+        <c:forEach var = "testresultat" items = "${listJuniorCResultat}">
+
+            <tr>
+                <td>${testresultat.år}</td>
+                <td>${testresultat.uke}</td>
+                <td>${testresultat.klasseID}</td>
+                <td>${testresultat.score}</td>
+                <td>${testresultat.watt_60}</td>
+                <td>${testresultat.bevegelighet}</td>
+                <td>${testresultat._3000_løp}</td>
+                <td>${testresultat.antall_Kr_hev}</td>
+                <td>${testresultat.cm_Sargeant}</td>
+
+
+            </tr>
+
         </c:forEach>
 
     </table>
