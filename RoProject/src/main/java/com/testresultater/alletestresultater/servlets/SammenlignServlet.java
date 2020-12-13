@@ -14,7 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
+/*
+Denne servleten håndterer all funksjonalitet som har med ulike typer sammenligninger.
+Metodene under hånterer sammenligning mellom 2 utøvere eller at en utøver sammenligner seg selv med de 10 beste
+historisk nasjonalt i sin klasse.
+ */
 @WebServlet(name = "SammenlignServlet", urlPatterns = {"/sammenlign2utovere", "/sammenligbeste"})
 public class SammenlignServlet extends HttpServlet {
     private int uid;
@@ -49,14 +53,14 @@ public class SammenlignServlet extends HttpServlet {
                 case "/sammenligbeste":
                     sammenligbeste(request, response);
                     break;
-
             }
         } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
-
     }
-
+/*
+Denne metoden henter og lager én tabell om utøveren selv og én større tabell med de 10 beste nasjonalt i denne klassen.
+ */
     private void sammenligbeste(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         testresultat testres1 = new testresultat(uid);
         Testresultati testres2 = new Testresultati(Klasse);
@@ -68,7 +72,10 @@ public class SammenlignServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("sammenlignbeste.jsp");
         dispatcher.forward(request, response);
     }
-
+/*
+Denne metoden sammenligner to utøvere opp mot hverandre. Først henter den ut alle testresultatene fra en innloggede
+utøveren også henter den ut alle testresultater fra den utøveren man ønsker å sammenligne seg med.
+ */
     private void sammenlign2utovere (HttpServletRequest request, HttpServletResponse response) throws
         ServletException, IOException {
             int Uid2 = Integer.parseInt(request.getParameter("id2"));

@@ -92,28 +92,7 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
     public List<testresultat> listOppEnUtover(testresultat param){
         List<testresultat> testresultater = new ArrayList<>();
        try {
-           String query = "SELECT \n" +
-                   "t.år,\n" +
-                   "t.uke,\n" +
-                   "t.score,\n" +
-                   "r.klasseType,\n" +
-                   "t.watt_60,\n" +
-                   "t.bevegelighet,\n" +
-                   "t.watt_5000_m,\n" +
-                   "t.tid_5000_m,\n" +
-                   "t.watt_2000_M,\n" +
-                   "t.tid_2000_m,\n" +
-                   "t.prosent_ligg_ro,\n" +
-                   "t.kilo_ligg_ro,\n" +
-                   "t.prosent_knebøy,\n" +
-                   "t.kilo_knebøy\n" +
-                   "from testresultater t\n" +
-                   "join utover u\n" +
-                   "    on t.uID = u.uID\n" +
-                   "    \n" +
-                   "join roKlasse r\n" +
-                   "\ton t.klasseID = r.klasseID\n" +
-                   "where t.uID = ? ";
+           String query = "";
            connection = dbTOOL.createConnection();
            PreparedStatement preparedStatement = connection.prepareStatement(query);
            preparedStatement.setInt(1, param.getuID());

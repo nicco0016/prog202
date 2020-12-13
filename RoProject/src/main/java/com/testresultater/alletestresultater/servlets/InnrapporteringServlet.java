@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
 
+/*
+Denne servleten hånterer innrapportering og sender testresultatene inn til midlertidig-tabellen for påvente av super sin
+godkjenning.
+ */
 @WebServlet(name = "InsertServlet", urlPatterns = {"/insertSenior", "/insertJuniorA", "/insertJuniorB", "/insertJuniorC" })
 public class InnrapporteringServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

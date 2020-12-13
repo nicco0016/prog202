@@ -17,6 +17,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/*
+Denne servleten henter ut alle utøverID, fornavn og etternavn fra utøvere i en bestemt klubb, ut ifra klubbID(fra cookie)
+
+ */
 @WebServlet(name = "getallUIDServlet", urlPatterns = {"/getuiddropdown"})
 public class HentUtøverNavnInnrapporteringServlet extends HttpServlet {
     private int klubbid;
