@@ -15,7 +15,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/*
+Denne servleten henter ut alle testresultater fra en bestemt klasse som har blitt avslått av super, slik at en rotrener kan se hvem som må
+endres.
+ */
 @WebServlet(name = "TestresultaterAvslagServlet", urlPatterns = {"/testresavslag"})
 public class TestresultaterAvslagServlet extends HttpServlet {
 

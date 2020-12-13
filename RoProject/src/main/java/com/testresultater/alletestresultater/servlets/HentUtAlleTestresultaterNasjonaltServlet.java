@@ -15,18 +15,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/*
+Denne servleten henter ut alle testresultater på nasjonalt nivå fra ett testbatteri og fra én klassen.
+ */
 @WebServlet(name = "alleTestresultaterServlet", urlPatterns = {"/parameter"})
 public class HentUtAlleTestresultaterNasjonaltServlet extends HttpServlet {
-
-
-
-
-
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
