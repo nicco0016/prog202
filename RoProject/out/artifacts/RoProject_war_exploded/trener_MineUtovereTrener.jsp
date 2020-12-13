@@ -25,10 +25,7 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <td><a href="<%=request.getContextPath()%>/testresultater?id=${utoverid}">Mine testresultater</a></td> <!--Sender til UtoverresultServlet-->
-            <td><a href="<%=request.getContextPath()%>/klubbUtovere?roklubb=${roklubb}">Utøvere i ${roklubb} roklubb</a></td> <!-- Sender til v2utoverServlet -->
             <li><a href="InsertPage.jsp">Legg til ny utøver</a></li>
-
         </ul>
     </div>
 </nav>
@@ -68,7 +65,7 @@
                 <td>${utover.fornavn}</td>
                 <td>${utover.etternavn}</td>
                 <td>${utover.fodt}</td>
-                <td><a href="<%=request.getContextPath()%>/seresultater?id=${utover.uID}">Se testresultater</a>
+                <td><a href="<%=request.getContextPath()%>/seEnAnnenSideResultater?id=${utover.uID}">Se testresultater</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="<%=request.getContextPath()%>/endreutover?id=${utover.uID}">Endre utøver</a></td>

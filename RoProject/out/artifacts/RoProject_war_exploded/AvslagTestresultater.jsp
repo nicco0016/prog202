@@ -21,10 +21,6 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="<%=request.getContextPath()%>/alleutovere">Mine utøvere</a></li>
-            <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>
-            <li><a href="LeggInnTestResTrenerV2.jsp">Legg til testresultater</a></li>
-
         </ul>
     </div>
 </nav>

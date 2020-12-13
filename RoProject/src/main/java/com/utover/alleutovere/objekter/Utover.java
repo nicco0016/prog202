@@ -26,6 +26,12 @@ public class Utover {
         this.etternavn = etternavn;
     }
 
+    public Utover(int uID, String fornavn, String etternavn) {
+        this.uID = uID;
+        this.fornavn = fornavn;
+        this.etternavn = etternavn;
+    }
+
     public Utover(int uID) {
         this.uID = uID;
     }

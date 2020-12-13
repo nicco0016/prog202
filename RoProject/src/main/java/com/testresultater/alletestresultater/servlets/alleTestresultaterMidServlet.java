@@ -2,6 +2,7 @@ package com.testresultater.alletestresultater.servlets;
 
 import com.testresultater.alletestresultater.alleTestresultater;
 import com.testresultater.alletestresultater.objekter.testresultat;
+import com.testresultater.alletestresultater.resultatverifisering;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,14 +16,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Denne servleten henter ut alle testresultatene som er sendt inn som midlertidig, hvor super vil hente ut
+og godkjenne/ikke godkjenne. Denne servleten henter ut den roklassen som hr blitt valgt på forhånd
+av en innlogget super-bruker.
+ */
+
 
 @WebServlet(name = "alleTestresultaterMidServlet", urlPatterns = {"/testresmid"})
 public class alleTestresultaterMidServlet extends HttpServlet {
-
-
-
-
-
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -40,8 +42,8 @@ public class alleTestresultaterMidServlet extends HttpServlet {
         List<testresultat> listTestresultat = null;
         try {
 
-            alleTestresultater alletestresultater = new alleTestresultater();
-            listTestresultat = alletestresultater.listOppAlleTestresultater_mid(testresparam);
+            resultatverifisering verifisering = new resultatverifisering();
+            listTestresultat = verifisering.listOppAlleTestresultater_mid(testresparam);
         } catch (SQLException e) {
             e.printStackTrace();
         }

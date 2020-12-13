@@ -23,8 +23,6 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="HentUtTestresultater.jsp">Testresultater</a></li>
-            <li><a href="#">Utøvere</a></li>
         </ul>
     </div>
 </nav>
@@ -86,7 +84,7 @@
                 <td>${testresultat.prosent_ligg_ro}</td>
                 <td>${testresultat.kilo_ligg_ro}</td>
                 <td>${testresultat.cm_Sargeant}</td>
-                <td><a href="<%=request.getContextPath()%>/endre?id=${testresultat.uID}">Endre</a></td>
+                <td><a href="<%=request.getContextPath()%>/endreTestresultat?id=${testresultat.uID}">Endre</a></td>
 
             </tr>
 

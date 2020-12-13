@@ -21,9 +21,8 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="Utover.jsp">Klubboversikt</a></li>
             <li><a href="godkjenning.jsp">Godkjenning av testresultater</a></li>
-            <li><a href="Utover.jsp">Legg til klubb</a></li>
+            <li><a href="<%=request.getContextPath()%>/alleKlubber">Vis alle klubber</a></li>
         </ul>
     </div>
 </nav>

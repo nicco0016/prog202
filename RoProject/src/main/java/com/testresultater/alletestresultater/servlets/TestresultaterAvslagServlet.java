@@ -2,6 +2,7 @@ package com.testresultater.alletestresultater.servlets;
 
 import com.testresultater.alletestresultater.alleTestresultater;
 import com.testresultater.alletestresultater.objekter.testresultat;
+import com.testresultater.alletestresultater.resultatverifisering;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,13 +19,7 @@ import java.util.List;
 @WebServlet(name = "TestresultaterAvslagServlet", urlPatterns = {"/testresavslag"})
 public class TestresultaterAvslagServlet extends HttpServlet {
 
-
-
-
-
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,8 +35,8 @@ public class TestresultaterAvslagServlet extends HttpServlet {
         List<testresultat> listTestresultat = null;
         try {
 
-            alleTestresultater alletestresultater = new alleTestresultater();
-            listTestresultat = alletestresultater.listOppAlleTestresultater_avsla(testresparam);
+            resultatverifisering verifisering = new resultatverifisering();
+            listTestresultat = verifisering.listOppAlleTestresultater_avsla(testresparam);
         } catch (SQLException e) {
             e.printStackTrace();
         }

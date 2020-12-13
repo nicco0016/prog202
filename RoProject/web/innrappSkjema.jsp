@@ -54,7 +54,7 @@
 
                 <select name="utoverID" >
                     <c:forEach var = "id" items = "${senior}">
-                    <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                    <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
 
@@ -394,7 +394,7 @@
             <td>
                 <select class="1select" name="utoverID">
                     <c:forEach var = "id" items = "${jA}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                        <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -689,7 +689,7 @@
     <fieldset>
         <legend></legend>
         <label for="år">År:</label>
-        <select class="select-css" name="år">
+        <select class="select-css" name="ar">
             <option selected disabled value="">Velg</option>
             <option value="2020">2020</option>
             <option value="2021">2021</option>
@@ -722,7 +722,7 @@
             <td>
                 <select class="1select" name="utoverID">
                     <c:forEach var = "id" items = "${jB}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                        <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -1018,7 +1018,7 @@
         <fieldset>
             <legend></legend>
             <label for="år">År:</label>
-            <select class="select-css" name="år">
+            <select class="select-css" name="ar">
                 <option selected disabled value="">Velg</option>
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>
@@ -1047,7 +1047,7 @@
             <td>
                 <select class="1select" name="utoverID">
                     <c:forEach var = "id" items = "${jC}">
-                        <option value="${id.klubbID}">${id.fornavn} ${id.etternavn}</option>
+                        <option value="${id.uID}">${id.fornavn} ${id.etternavn}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -1062,7 +1062,7 @@
                 </select>
             </td>
             <td>
-                <select class="2select" name="3000løpMin">
+                <select class="2select" name="3000lopMin">
                     <option selected disabled value="">min</option>
                     <option value="00">00</option>
                     <option value="01">01</option>
@@ -1125,7 +1125,7 @@
                     <option value="58">58</option>
                     <option value="59">59</option>
                 </select>
-                <select class="2select" name="3000løpSek">
+                <select class="2select" name="3000lopSek">
                     <option selected disabled value="">sek</option>
                     <option value="00">00</option>
                     <option value="01">01</option>

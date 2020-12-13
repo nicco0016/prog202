@@ -29,7 +29,7 @@
 
 <section id="showcase">
 
-    <form action="endretutover" method="POST"> <!-- Sender til TestresultatInsertServlet-->
+    <form action="oppdaterUtover" method="GET"> <!-- Sender til TestresultatInsertServlet-->
         <p>
             <label for="klasse">Velg roklasse:</label>
             <select id="klasse" name="klasse" required>

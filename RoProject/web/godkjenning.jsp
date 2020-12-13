@@ -14,16 +14,13 @@
 <body>
 <header id="main-header">
     <div class="container">
-        <h1>Norges Roforbund - Trener</h1>
+        <h1>Norges Roforbund - Super</h1>
     </div>
 </header>
 
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="LeggInnTestresultater.jsp">Legg til testresultater</a></li>
-            <li><a href="HentUtTestresultaterTrener.jsp">Hent ut testresultater</a></li>
-            <li><a href="LeggInnTestResTrenerV2.jsp">Legg til</a></li>
 
         </ul>
     </div>
