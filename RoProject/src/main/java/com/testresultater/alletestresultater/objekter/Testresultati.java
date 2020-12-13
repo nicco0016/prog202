@@ -152,6 +152,11 @@ public class Testresultati {
         this._3000_løp = _3000_løp;
     }
 
+    public Testresultati(int uID, int klasseID) {
+        this.uID = uID;
+        this.klasseID = klasseID;
+    }
+
     public Testresultati(int uID) {
         this.uID = uID;
     }
