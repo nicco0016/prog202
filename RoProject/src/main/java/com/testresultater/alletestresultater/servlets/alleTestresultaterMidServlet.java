@@ -16,14 +16,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Denne servleten henter ut alle testresultatene som er sendt inn som midlertidig, hvor super vil hente ut
+og godkjenne/ikke godkjenne. Denne servleten henter ut den roklassen som hr blitt valgt på forhånd
+av en innlogget super-bruker.
+ */
+
 
 @WebServlet(name = "alleTestresultaterMidServlet", urlPatterns = {"/testresmid"})
 public class alleTestresultaterMidServlet extends HttpServlet {
-
-
-
-
-
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

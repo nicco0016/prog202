@@ -23,8 +23,6 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="HentUtTestresultater.jsp">Testresultater</a></li>
-            <li><a href="#">Utøvere</a></li>
         </ul>
     </div>
 </nav>

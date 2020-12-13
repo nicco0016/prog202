@@ -15,6 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/*
+Hensikten med denne servleten er å utføre endringer i ikke-godkjente testresultater. Dette vil de 2 metodene
+nedenfor utføre.
+
+ */
+
 @WebServlet(name = "EndreAvslattTestresultatServlet", urlPatterns = {"/endreTestresultat", "/oppdaterTestresultat"})
 public class EndreAvslattTestresultat extends HttpServlet {
     private int Uid;
@@ -33,12 +39,21 @@ public class EndreAvslattTestresultat extends HttpServlet {
         }
     }
 
+    /*
+    Hvis testresultatet blir "ikke-godkjent" ,så vil den havne hos rotreneren. Der kan han trykke på
+    endre testresultat. Når treneren trykker på "endre" vil step 1 kjøres og
+    treneres sender til siden for å endre resultatet.
+     */
     public void endreTestresultat (HttpServletRequest request, HttpServletResponse response) throws IOException {
            int uid = Integer.parseInt(request.getParameter("id"));
            Uid = uid;
             response.sendRedirect("endre.jsp");
         }
 
+    /*
+    Deretter fyller treneren inn resultatet på nytt og sender dette inn. Det er her step 2 kjøres, hvor resultatet blir
+    sendt inn på nytt for godkjenning.
+     */
     private void oppdatertTestresultat(HttpServletRequest request, HttpServletResponse response) {
 
         int utoverID = Uid;
