@@ -180,6 +180,8 @@ public class resultatverifisering {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return testresultater;
     }
@@ -254,6 +256,8 @@ public class resultatverifisering {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return testresultater;
     }
@@ -277,13 +281,11 @@ public class resultatverifisering {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return testres;
     }
-
-
-
-
 
     public void destroy () {
         try {

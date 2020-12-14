@@ -86,6 +86,8 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return testresultater;
 }
@@ -129,6 +131,8 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
            }
        } catch (SQLException e) {
            e.printStackTrace();
+       }finally {
+           destroy();
        }
        return testresultater;
     }
@@ -177,6 +181,8 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return listesammenlignbeste;
     }
@@ -227,6 +233,8 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
 
             } catch (SQLException e) {
                 e.printStackTrace();
+            } finally {
+                destroy();
             }
 
         return listesammenlign;
@@ -279,13 +287,12 @@ public List<testresultat> listOppAlleTestresultater(List<testresultat> parameter
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
 
         return listesammenlign;
     }
-
-
-
 
 
 public void destroy () {

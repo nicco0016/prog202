@@ -23,8 +23,6 @@
 <nav id="navbar">
     <div class="container">
         <ul>
-            <li><a href="HentUtTestresultater.jsp">Testresultater</a></li>
-            <li><a href="#">Utøvere</a></li>
         </ul>
     </div>
 </nav>
@@ -32,7 +30,7 @@
 <section id="showcase">
 
     <table>
-        <caption>Liste over testresultater</caption>
+        <h2>Liste over dine testresultater</h2>
 
         <br>
 
@@ -83,7 +81,7 @@
     </table>
 
     <table>
-        <caption>Liste over alle testresultater</caption>
+     <h2>Liste over medutøver sine  testresultater </h2>
 
         <br>
 

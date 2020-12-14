@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Legg inn resultater</title>
-    <link rel="stylesheet" type="text/css" href="Innrapportering.css">
+    <link rel="stylesheet" type="text/css" href="Innrapportering.css"> <!-- InnrapporteringsServlet -->
 </head>
 <body>
 
@@ -356,7 +356,7 @@
 
 <h2>Junior A</h2>
 
-<form method="post" action="insertJuniorA">
+<form method="post" action="insertJuniorA"> <!-- InnrapporteringsServlet -->
 
     <div class="formWrapper">
         <fieldset>
@@ -684,7 +684,7 @@
 </div>
 
 <h2>Junior B</h2>
-<form method="post" action="insertJuniorB">
+<form method="post" action="insertJuniorB"> <!-- InnrapporteringsServlet -->
 <div class="formWrapper">
     <fieldset>
         <legend></legend>
@@ -1012,7 +1012,7 @@
 
 <h2>Junior C</h2>
 
-<form method="post" action="insertJuniorC">
+<form method="post" action="insertJuniorC"> <!-- InnrapporteringsServlet -->
 
     <div class="formWrapper">
         <fieldset>

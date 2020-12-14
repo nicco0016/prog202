@@ -34,6 +34,8 @@ public class getUID {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return senior;
     }
@@ -57,6 +59,8 @@ public class getUID {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return jA;
     }
@@ -80,6 +84,8 @@ public class getUID {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return jB;
     }
@@ -103,9 +109,18 @@ public class getUID {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return jC;
     }
 
+    public void destroy () {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

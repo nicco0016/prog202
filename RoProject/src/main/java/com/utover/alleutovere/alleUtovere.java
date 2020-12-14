@@ -72,6 +72,8 @@ public class alleUtovere {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return utovere;
     }
@@ -139,7 +141,9 @@ public class alleUtovere {
 
             } } catch(SQLException e){
                 e.printStackTrace();
-            }
+            }finally {
+            destroy();
+        }
 
         return utover;
 
@@ -161,7 +165,7 @@ public class alleUtovere {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-
+            destroy();
         }
 
     }
@@ -184,6 +188,8 @@ public class alleUtovere {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            destroy();
         }
         return testres;
     }

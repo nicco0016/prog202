@@ -108,7 +108,7 @@ public class utoverSeResultaterServlet extends HttpServlet {
         request.setAttribute("listJuniorAResultat", listJuniorAResultat);
         request.setAttribute("listJuniorBResultat", listJuniorBResultat);
         request.setAttribute("listJuniorCResultat", listJuniorCResultat);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("utover_mineTestresultater.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("utover_seEnAnnenTestresultater.jsp");
         dispatcher.forward(request, response);
     }
 }
